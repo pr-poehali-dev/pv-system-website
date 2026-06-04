@@ -326,7 +326,7 @@ export default function Index() {
                 </div>
               </div>
               <p className="text-sm text-[#94a3b8] leading-relaxed max-w-xs">
-                Программный комплекс для расчёта вентиляции и водоснабжения горно-рудных предприятий и МЧС ВГСЧ. Внесён в Реестр отечественного ПО МинЦифры РФ.
+                Специализированный программный комплекс для проектирования вентиляции и водоснабжения горно-рудных предприятий и решения задач противоаварийной устойчивости.
               </p>
             </div>
             <div>
@@ -342,17 +342,12 @@ export default function Index() {
               <div className="space-y-2 text-sm text-[#94a3b8]">
                 <div>+7 (495) 123-45-67</div>
                 <div>info@пв-система.рф</div>
-                <div>ПВ-Система.рф</div>
-                <div className="mt-3 pt-3 border-t border-white/10">
-                  <div className="norm-badge bg-transparent border-white/20 text-[#93c5fd]" style={{ background: "rgba(255,255,255,0.05)" }}>
-                    Реестр МинЦифры № 9834
-                  </div>
-                </div>
+                <div>PV-System.ru</div>
               </div>
             </div>
           </div>
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[#64748b]">
-            <div>© 2024 ООО «ПВ-Система». Все права защищены.</div>
+            <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
               <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
               <a href="#" className="hover:text-white transition-colors">Лицензионное соглашение</a>
