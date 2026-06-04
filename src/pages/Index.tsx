@@ -11,7 +11,7 @@ const NAV = [
 ];
 
 const MODULES = [
-  { icon: "Wind", code: "АЭР-01", title: "Вентиляционная сеть", desc: "Аэродинамический расчёт методом Харди–Кросса. Депрессия, сопротивления и распределение расходов воздуха по выработкам" },
+  { icon: "Wind", code: "", title: "Вентиляционная сеть", desc: "Аэродинамический расчёт. Депрессия, сопротивления и распределение расходов воздуха по горным выработкам." },
   { icon: "Droplets", code: "ВОД-01", title: "Водоотлив и водоснабжение", desc: "Гидравлический расчёт рудничного водоотлива, пожарно-орошаемого водоснабжения и трубопроводов" },
   { icon: "Shield", code: "ПБ-01", title: "Пожарная безопасность", desc: "Моделирование пожарной депрессии, реверса вентилятора, аварийного проветривания для ПЛА ВГСЧ" },
   { icon: "BarChart2", code: "АНЛ-01", title: "Депрессионная съёмка", desc: "Обработка данных натурных инструментальных съёмок, сравнение расчётных и фактических параметров" },
@@ -224,7 +224,7 @@ export default function Index() {
                   <div className="icon-box">
                     <Icon name={m.icon as "Wind"} size={22} style={{ color: "#0e63b0" }} />
                   </div>
-                  <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded">{m.code}</span>
+                  {m.code && <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded">{m.code}</span>}
                 </div>
                 <h3 className="font-semibold text-[#0d1f35] text-sm mb-2 leading-snug">{m.title}</h3>
                 <p className="text-[#5a6e82] text-xs leading-relaxed">{m.desc}</p>
