@@ -94,37 +94,37 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="gradient-hero text-white py-20 relative overflow-hidden">
+      <section className="gradient-hero text-white py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.3) 0%, transparent 50%)" }} />
         <div className="absolute bottom-0 left-0 right-0 h-16"
           style={{ background: "linear-gradient(to top, white, transparent)" }} />
 
-        <div className="container max-w-7xl mx-auto px-6 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="font-display leading-tight mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
-                <span className="text-[clamp(1.25rem,3vw,2rem)] font-semibold text-[#bfdbfe]">Программный комплекс</span><br />
-                <span className="text-[clamp(2rem,5vw,3.5rem)] text-[#7dd3fc]">ПВ-Система</span>
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="font-display leading-tight mb-4 md:mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
+                <span className="text-[clamp(1rem,2.5vw,1.75rem)] font-semibold text-[#bfdbfe]">Программный комплекс</span><br />
+                <span className="text-[clamp(2.2rem,6vw,3.5rem)] text-[#7dd3fc]">ПВ-Система</span>
               </h1>
 
-              <p className="text-[#bfdbfe] text-lg leading-relaxed mb-8 max-w-lg anim-1">
+              <p className="text-[#bfdbfe] text-base md:text-lg leading-relaxed mb-7 md:mb-8 max-w-lg mx-auto lg:mx-0 anim-1">
                 Проектирование вентиляции и водоснабжения для горно-рудных предприятий.
               </p>
 
-              <div className="flex flex-wrap gap-3 anim-2">
-                <a href="#docs" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 anim-2">
+                <a href="#docs" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
                   <Icon name="Download" size={16} />
                   Скачать демо
                 </a>
-                <a href="#contacts" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center gap-2">
+                <a href="#contacts" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <Icon name="Mail" size={16} />
                   Связаться
                 </a>
               </div>
             </div>
 
-            <div className="relative anim-1 hidden lg:block">
+            <div className="relative anim-1 mt-6 lg:mt-0">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-2xl">
                 <img src={IMG_MINE} alt="ПВ-Система в работе" className="w-full aspect-[4/3] object-cover opacity-80" />
               </div>
@@ -136,9 +136,9 @@ export default function Index() {
 
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-20">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section id="about" className="py-16 md:py-20">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <div className="section-rule" />
               <div className="tag-blue mb-3">О программном комплексе</div>
@@ -184,10 +184,10 @@ export default function Index() {
               </div>
 
             </div>
-            <div className="relative">
+            <div className="relative pb-6 pr-6 lg:pb-5 lg:pr-5">
               <img src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/080f4e0d-f56f-4c8c-af30-145bd2af632b.jpg" alt="Вентиляция горных выработок" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
-              <div className="absolute -bottom-5 -right-5 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[160px]">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="absolute bottom-0 right-0 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[150px]">
+                <div className="flex items-center gap-2">
                   <div className="flex flex-col gap-[3px]">
                     <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #dce6f0" }} />
                     <div className="w-7 h-[5px] rounded-sm" style={{ background: "#0039A6" }} />
@@ -205,8 +205,8 @@ export default function Index() {
       </section>
 
       {/* ── MODULES ── */}
-      <section id="modules" className="py-20 bg-[#f4f7fb]">
-        <div className="container max-w-7xl mx-auto px-6">
+      <section id="modules" className="py-16 md:py-20 bg-[#f4f7fb]">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <div className="section-rule mx-auto" />
             <div className="tag-blue mb-3">Возможности системы</div>
@@ -217,7 +217,7 @@ export default function Index() {
               задач вентиляции и водоснабжения горно-рудных предприятий
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {MODULES.map(m => (
               <div key={m.code} className="card-white rounded-xl p-5 cursor-default">
                 <div className="flex items-start justify-between mb-4">
@@ -237,9 +237,9 @@ export default function Index() {
 
 
       {/* ── CONTACTS ── */}
-      <section id="contacts" className="py-20 bg-[#f4f7fb]">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section id="contacts" className="py-20 bg-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="section-rule" />
               <div className="tag-blue mb-3">Контакты</div>
@@ -277,7 +277,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Имя</label>
                     <input type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Иван Петров" className={inp} />
@@ -315,8 +315,8 @@ export default function Index() {
 
       {/* ── FOOTER ── */}
       <footer className="bg-[#0d1f35] text-white py-12">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain" />
