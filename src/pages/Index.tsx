@@ -116,73 +116,38 @@ export default function Index() {
         <div className="container max-w-7xl mx-auto px-6 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 mb-5 anim-0">
-                <div className="status-dot" />
-                <span className="text-xs font-mono text-[#93c5fd] tracking-wider uppercase">v5.1 · Нормативная база актуализирована 2024</span>
-              </div>
-
-              <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight mb-5 anim-1" style={{ letterSpacing: "0.01em" }}>
+              <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
                 Программный комплекс<br />
                 <span className="text-[#7dd3fc]">ПВ-Система</span>
               </h1>
 
-              <p className="text-[#bfdbfe] text-lg leading-relaxed mb-3 max-w-lg anim-2">
+              <p className="text-[#bfdbfe] text-lg leading-relaxed mb-8 max-w-lg anim-1">
                 Расчёт вентиляции горно-рудных предприятий, водоотлива и водоснабжения рудников.
                 Документация для Ростехнадзора и подразделений МЧС ВГСЧ.
               </p>
-              <p className="text-[#93c5fd] text-sm mb-8 anim-2">
-                Включён в Реестр отечественного программного обеспечения Министерства цифрового развития РФ.
-              </p>
 
-              <div className="flex flex-wrap gap-3 anim-3">
-                <a href="#contacts" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center gap-2">
-                  <Icon name="Play" size={16} />
-                  Запросить демо
-                </a>
-                <a href="#docs" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center gap-2">
+              <div className="flex flex-wrap gap-3 anim-2">
+                <a href="#docs" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center gap-2">
                   <Icon name="Download" size={16} />
                   Скачать демо
                 </a>
+                <a href="#contacts" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center gap-2">
+                  <Icon name="Mail" size={16} />
+                  Связаться
+                </a>
               </div>
             </div>
 
-            <div className="relative anim-2 hidden lg:block">
+            <div className="relative anim-1 hidden lg:block">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-2xl">
                 <img src={IMG_MINE} alt="ПВ-Система в работе" className="w-full aspect-[4/3] object-cover opacity-80" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[rgba(10,77,138,0.9)]">
-                  <div className="flex flex-wrap gap-2">
-                    {NORMS.slice(0, 4).map(n => (
-                      <span key={n} className="norm-badge" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "#e0f2fe" }}>{n.split("«")[0]}</span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 pt-10 border-t border-white/20 anim-3">
-            {ADVANTAGES.map(a => (
-              <div key={a.num} className="text-center">
-                <div className="text-3xl font-display font-bold text-white mb-1">{a.num}</div>
-                <div className="text-sm font-semibold text-[#7dd3fc]">{a.label}</div>
-                <div className="text-xs text-[#93c5fd] mt-0.5">{a.sub}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* ── НОРМ-СТРИП ── */}
-      <div className="bg-[#f4f7fb] border-b border-[#dce6f0] py-4">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold text-[#5a6e82] uppercase tracking-wide shrink-0">Нормативная база:</span>
-            {NORMS.map(n => (
-              <span key={n} className="norm-badge">{n}</span>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       {/* ── ABOUT ── */}
       <section id="about" className="py-20">
