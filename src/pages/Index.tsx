@@ -7,7 +7,6 @@ const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5f
 const NAV = [
   { label: "О программе", href: "#about" },
   { label: "Возможности", href: "#modules" },
-  { label: "Документация", href: "#docs" },
   { label: "Контакты", href: "#contacts" },
 ];
 
@@ -34,9 +33,6 @@ const ADVANTAGES = [
   { num: "МЧС", label: "Совместимость с ВГСЧ", sub: "документация для аварийных служб" },
 ];
 
-const DOCS = [
-  { title: "Руководство пользователя", size: "PDF · 6.8 МБ", icon: "BookOpen" },
-];
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -245,41 +241,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── DOCS ── */}
-      <section id="docs" className="py-20">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div>
-              <div className="section-rule" />
-              <div className="tag-blue mb-3">Документация</div>
-              <h2 className="font-display text-[clamp(1.5rem,3vw,2.2rem)] text-[#0d1f35] mb-4 leading-tight">
-                Вся документация на русском языке
-              </h2>
-              <p className="text-[#5a6e82] text-sm leading-relaxed mb-6">
-                Руководства, методики расчётов, видеоуроки и нормативная база — всё адаптировано под требования горно-рудных предприятий России и МЧС ВГСЧ.
-              </p>
-              <a href="#contacts" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0e63b0] hover:text-[#0a4d8a] transition-colors">
-                Получить полный пакет
-                <Icon name="ArrowRight" size={16} />
-              </a>
-            </div>
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {DOCS.map(d => (
-                <button key={d.title} className="card-white rounded-lg p-4 flex items-center gap-3 hover-lift text-left group w-full">
-                  <div className="icon-box shrink-0">
-                    <Icon name={d.icon as "BookOpen"} size={18} style={{ color: "#0e63b0" }} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-semibold text-[#0d1f35] group-hover:text-[#0e63b0] transition-colors truncate">{d.title}</div>
-                    <div className="text-xs text-[#5a6e82] mt-0.5">{d.size}</div>
-                  </div>
-                  <Icon name="Download" size={16} className="text-[#9fb3c8] group-hover:text-[#0e63b0] transition-colors shrink-0" />
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* ── CONTACTS ── */}
       <section id="contacts" className="py-20 bg-[#f4f7fb]">
