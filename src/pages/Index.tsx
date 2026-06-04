@@ -159,27 +159,48 @@ export default function Index() {
                 Специализированная система для горных инженеров
               </h2>
               <p className="text-[#5a6e82] leading-relaxed mb-5">
-                ПВ-Система — программный комплекс для расчёта вентиляции и водоснабжения горно-рудных предприятий. Разработан совместно с ВНИМИ и Санкт-Петербургским горным университетом. В основе — метод Харди–Кросса и актуализированная нормативная база по ЕПБ рудных месторождений.
+                ПВ-Система — специализированный программный комплекс для решения задач проветривания горных выработок и противоаварийной устойчивости горных предприятий: рудников и тоннелей.
               </p>
-              <p className="text-[#5a6e82] leading-relaxed mb-8">
-                Система ориентирована на рудники цветных, чёрных, драгоценных металлов, калийные и нерудные предприятия. Формирует документацию ПЛА для подразделений МЧС ВГСЧ и проектную документацию, принимаемую Ростехнадзором.
+              <p className="text-[#5a6e82] leading-relaxed mb-5">
+                Исходными данными для расчётов являются пространственная сеть горных выработок и расположенное в них оборудование: вентиляционные сооружения, вентиляторы, трубопроводные сети, места расположения вспомогательных элементов и спасательных средств.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                {[
-                  "Метод Харди–Кросса (до 10⁻⁶ точность)",
-                  "Схемы с рециркуляцией воздуха в рудниках",
-                  "Расчёт реверса вентиляции для ПЛА ВГСЧ",
-                  "Протоколы и акты для Ростехнадзора",
-                  "Реестр МинЦифры № 9834",
-                  "Совместимость с AutoCAD и Renga",
-                ].map(t => (
-                  <div key={t} className="flex items-center gap-2.5">
-                    <div className="w-5 h-5 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0">
-                      <Icon name="Check" size={11} style={{ color: "#0e63b0" }} />
+
+              <div className="mb-5">
+                <div className="text-sm font-semibold text-[#0d1f35] mb-2">Вентиляционные задачи:</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    "Расчёт нормального воздухораспределения",
+                    "Воздухораспределение при пожаре",
+                    "Расчёт устойчивости при пожаре",
+                    "Расчёт устойчивости при разрушении шлюзов",
+                    "Расчёт баланса воздуха",
+                  ].map(t => (
+                    <div key={t} className="flex items-center gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0">
+                        <Icon name="Check" size={11} style={{ color: "#0e63b0" }} />
+                      </div>
+                      <span className="text-sm text-[#0d1f35]">{t}</span>
                     </div>
-                    <span className="text-sm text-[#0d1f35]">{t}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <div className="text-sm font-semibold text-[#0d1f35] mb-2">Задачи плана ликвидации аварии (ПЛА):</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    "Движение горноспасателей при разведке и ликвидации аварии",
+                    "Движение горнорабочих при эвакуации из рудника",
+                    "Расчёт распространения дыма в горных выработках",
+                  ].map(t => (
+                    <div key={t} className="flex items-center gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0">
+                        <Icon name="Check" size={11} style={{ color: "#0e63b0" }} />
+                      </div>
+                      <span className="text-sm text-[#0d1f35]">{t}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="flex items-center gap-3 p-4 bg-[#f0f7ff] rounded-lg border border-[#bee3f8]">
                 <img src={LOGO_URL} alt="ПВ-Система" className="h-12 w-12 object-contain rounded-lg" />
@@ -190,11 +211,19 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <img src={IMG_MINE} alt="Горно-рудное предприятие" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
-              <div className="absolute -bottom-5 -right-5 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg">
-                <div className="text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1">Разработано с</div>
-                <div className="text-sm font-bold text-[#0d1f35]">ВНИМИ · СПбГУ</div>
-                <div className="text-xs text-[#5a6e82]">Горный университет</div>
+              <img src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/080f4e0d-f56f-4c8c-af30-145bd2af632b.jpg" alt="Вентиляция горных выработок" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
+              <div className="absolute -bottom-5 -right-5 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[160px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex flex-col gap-[3px]">
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #dce6f0" }} />
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#0039A6" }} />
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#D52B1E" }} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-[#0d1f35] leading-tight">Сделано в России</div>
+                    <div className="text-[10px] text-[#5a6e82]">Российское ПО</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
