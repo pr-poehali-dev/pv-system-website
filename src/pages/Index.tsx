@@ -246,15 +246,13 @@ export default function Index() {
               <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35] mb-6 leading-tight">
                 Свяжитесь с нами
               </h2>
-              <p className="text-[#5a6e82] leading-relaxed mb-8 max-w-md">
-                Оставьте заявку — технический менеджер свяжется в течение рабочего дня, проведёт демонстрацию и поможет подобрать конфигурацию под ваше предприятие.
-              </p>
+
               <div className="space-y-4 mb-8">
                 {[
-                  { icon: "MapPin", label: "Адрес", val: "г. Москва, ул. Профсоюзная, 65, офис 318" },
+                  { icon: "MapPin", label: "Адрес", val: "Республика Башкортостан, г. Сибай, ул. Куйбышева, 20" },
                   { icon: "Phone", label: "Телефон", val: "+7 (495) 123-45-67" },
                   { icon: "Mail", label: "Email", val: "info@пв-система.рф" },
-                  { icon: "Globe", label: "Сайт", val: "ПВ-Система.рф" },
+                  { icon: "Globe", label: "Сайт", val: "PV-System.ru" },
                   { icon: "Clock", label: "Режим работы", val: "Пн–Пт 8:00–19:00 МСК" },
                 ].map(c => (
                   <div key={c.label} className="flex items-start gap-3">
