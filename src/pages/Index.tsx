@@ -36,11 +36,6 @@ const ADVANTAGES = [
 
 const DOCS = [
   { title: "Руководство пользователя", size: "PDF · 6.8 МБ", icon: "BookOpen" },
-  { title: "Методика аэродинамического расчёта", size: "PDF · 3.2 МБ", icon: "Calculator" },
-  { title: "Нормативная база — описание", size: "PDF · 1.4 МБ", icon: "Shield" },
-  { title: "Инструкция по депрессионной съёмке", size: "PDF · 2.0 МБ", icon: "Gauge" },
-  { title: "API и интеграция с AutoCAD / Renga", size: "HTML", icon: "Code" },
-  { title: "Видеокурс (12 уроков)", size: "YouTube плейлист", icon: "Play" },
 ];
 
 export default function Index() {
