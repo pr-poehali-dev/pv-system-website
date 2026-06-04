@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b5485825-6cc8-49fc-89a6-1a38d1cf22ac.jpg";
+const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
 const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/4b787e51-4a6a-4829-82e3-959df648569e.jpg";
 
 const NAV = [
@@ -353,7 +353,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg bg-white p-0.5" />
+                <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain" />
                 <div>
                   <div className="font-bold text-white">ПВ-Система</div>
                   <div className="text-xs text-[#93c5fd]">Вентиляция и водоснабжение рудников</div>
