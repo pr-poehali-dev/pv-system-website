@@ -3,16 +3,11 @@ import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b5485825-6cc8-49fc-89a6-1a38d1cf22ac.jpg";
 const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/4b787e51-4a6a-4829-82e3-959df648569e.jpg";
-const IMG_AERIAL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/05246733-bedc-49ca-bf10-b5026f53d231.jpg";
-const IMG_DASHBOARD = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/4539b730-ac55-4690-8485-ee72c2958f14.jpg";
 
 const NAV = [
   { label: "О программе", href: "#about" },
   { label: "Возможности", href: "#modules" },
-  { label: "Калькулятор", href: "#calculator" },
   { label: "Документация", href: "#docs" },
-  { label: "Кейсы", href: "#cases" },
-  { label: "Стоимость", href: "#pricing" },
   { label: "Контакты", href: "#contacts" },
 ];
 
@@ -20,9 +15,9 @@ const MODULES = [
   { icon: "Wind", code: "АЭР-01", title: "Вентиляционная сеть", desc: "Аэродинамический расчёт методом Харди–Кросса. Депрессия, сопротивления и распределение расходов воздуха по выработкам" },
   { icon: "Gauge", code: "АЭР-02", title: "Проветривание тупиков", desc: "Местное проветривание тупиковых выработок. Подбор ВМП, диаметра и длины вентиляционных труб" },
   { icon: "Flame", code: "ГАЗ-01", title: "Газовый баланс", desc: "Расчёт поступления CO, CO₂, NO₂, H₂S и других вредных газов. Разбавление до ПДК по ФНП на горно-рудных предприятиях" },
-  { icon: "Droplets", code: "ВОД-01", title: "Водоотлив и водоснабжение", desc: "Гидравлический расчёт шахтного водоотлива, пожарно-орошаемого водоснабжения и трубопроводов" },
+  { icon: "Droplets", code: "ВОД-01", title: "Водоотлив и водоснабжение", desc: "Гидравлический расчёт рудничного водоотлива, пожарно-орошаемого водоснабжения и трубопроводов" },
   { icon: "Thermometer", code: "КЛМ-01", title: "Тепловой расчёт", desc: "Прогноз тепловлажностных условий в забоях. Расчёт потребности в кондиционировании рудничного воздуха" },
-  { icon: "Shield", code: "ПБ-01", title: "Пожарная безопасность", desc: "Моделирование пожарной депрессии, реверса вентилятора, аварийного проветривания для ПЛА" },
+  { icon: "Shield", code: "ПБ-01", title: "Пожарная безопасность", desc: "Моделирование пожарной депрессии, реверса вентилятора, аварийного проветривания для ПЛА ВГСЧ" },
   { icon: "BarChart2", code: "АНЛ-01", title: "Депрессионная съёмка", desc: "Обработка данных натурных инструментальных съёмок, сравнение расчётных и фактических параметров" },
   { icon: "FileText", code: "ДОК-01", title: "Вентиляционная документация", desc: "Автогенерация схем вентиляции, ПЛА, паспортов ВМП и пояснительных записок для Ростехнадзора" },
 ];
@@ -43,36 +38,6 @@ const ADVANTAGES = [
   { num: "МЧС", label: "Совместимость с ВГСЧ", sub: "документация для аварийных служб" },
 ];
 
-const CASES = [
-  {
-    title: "Рудник «Таймырский»",
-    company: "Норникель",
-    type: "Медно-никелевый рудник",
-    depth: "1 100 м",
-    task: "Проектирование схемы вентиляции нового горизонта с тепловым расчётом забоев и водоснабжением",
-    result: "Снижение затрат на кондиционирование на 31%, заключение Ростехнадзора получено",
-    img: IMG_MINE,
-  },
-  {
-    title: "Рудник «Беларуськалий»",
-    company: "Беларуськалий",
-    type: "Калийный рудник",
-    depth: "340 м",
-    task: "Разработка ПЛА для ВГСЧ с моделированием аварийного проветривания и реверса вентилятора",
-    result: "Время разработки ПЛА сокращено с 3 месяцев до 18 дней",
-    img: IMG_DASHBOARD,
-  },
-  {
-    title: "ВГСЧ «Центроспас-Борец»",
-    company: "МЧС России",
-    type: "Горноспасательный отряд",
-    depth: "Рудники до 800 м",
-    task: "Расчёт параметров аварийного проветривания и водоснабжения для разработки оперативных планов",
-    result: "Сокращение времени подготовки оперативной документации на 70%",
-    img: IMG_AERIAL,
-  },
-];
-
 const DOCS = [
   { title: "Руководство пользователя", size: "PDF · 6.8 МБ", icon: "BookOpen" },
   { title: "Методика аэродинамического расчёта", size: "PDF · 3.2 МБ", icon: "Calculator" },
@@ -81,272 +46,6 @@ const DOCS = [
   { title: "API и интеграция с AutoCAD / Renga", size: "HTML", icon: "Code" },
   { title: "Видеокурс (12 уроков)", size: "YouTube плейлист", icon: "Play" },
 ];
-
-const PRICING = [
-  {
-    name: "Базовый",
-    price: "24 900",
-    period: "/ год",
-    badge: null,
-    desc: "Для одного инженера или небольшого предприятия",
-    features: ["1 рабочее место", "Модули АЭР-01, АЭР-02, ВОД-01", "Генерация отчётов PDF/DOCX", "Email-поддержка", "Обновления нормативной базы"],
-    highlight: false,
-  },
-  {
-    name: "Предприятие",
-    price: "89 000",
-    period: "/ год",
-    badge: "ПОПУЛЯРНЫЙ",
-    desc: "Для проектного отдела горного предприятия",
-    features: ["10 рабочих мест", "Все 8 модулей расчётов", "ПЛА и вентиляционные схемы", "Приоритетная поддержка + выезд", "Обучение персонала (16 ч)", "Сопровождение в Ростехнадзоре"],
-    highlight: true,
-  },
-  {
-    name: "Холдинг / МЧС",
-    price: "По запросу",
-    period: "",
-    badge: null,
-    desc: "Для управляющих компаний, проектных институтов и подразделений ВГСЧ",
-    features: ["Неограниченное число мест", "Сервер-версия (on-premise)", "Кастомизация под стандарты ВГСЧ", "SLA 99.9% · выделенный инженер", "Интеграция с АСУТП рудника", "Корпоративное обучение"],
-    highlight: false,
-  },
-];
-
-// ── CALCULATOR ────────────────────────────────────────────────────────────────
-
-function Calculator() {
-  const [tab, setTab] = useState<"vent" | "water" | "gas">("vent");
-  const [length, setLength] = useState("");
-  const [section, setSection] = useState("");
-  const [airflow, setAirflow] = useState("");
-  const [roughness, setRoughness] = useState("0.25");
-  const [levels, setLevels] = useState("");
-  const [inflow, setInflow] = useState("");
-  const [pipeDiam, setPipeDiam] = useState("");
-  const [workers, setWorkers] = useState("");
-  const [shotfiring, setShotfiring] = useState("yes");
-  const [blastAmount, setBlastAmount] = useState("");
-  const [mineType, setMineType] = useState("ore");
-
-  const calcVent = () => {
-    const L = parseFloat(length), S = parseFloat(section), Q = parseFloat(airflow), K = parseFloat(roughness);
-    if (!L || !S || !Q) return null;
-    const v = Q / S;
-    const dh = 2 * Math.sqrt(S / Math.PI);
-    const lambda = 0.3 / Math.pow((v * dh / 0.000015), 0.25) + 0.00025 * K;
-    const R = (lambda * L) / (S * S * dh * 2 * 1.2);
-    const depr = Math.round(R * Q * Q);
-    const vms = v.toFixed(2);
-    const ok = v < 4 ? { t: "Норма (до 4 м/с)", c: "#16a34a" } : v < 8 ? { t: "Повышенная скорость", c: "#d97706" } : { t: "Превышение нормы ФНП!", c: "#dc2626" };
-    return { depr, vms, R: R.toFixed(5), ...ok };
-  };
-
-  const calcWater = () => {
-    const lv = parseFloat(levels), inf = parseFloat(inflow), pd = parseFloat(pipeDiam);
-    if (!lv || !inf) return null;
-    const qMax = Math.ceil(inf * 1.5);
-    const power = Math.round((qMax / 3600) * 1000 * 9.81 * lv * 1.2 / 1000 / 0.7);
-    const velocity = pd ? ((qMax / 3600) / (Math.PI * Math.pow(pd / 2000, 2))).toFixed(2) : null;
-    return { qNormal: inf, qMax, power, velocity };
-  };
-
-  const calcGas = () => {
-    const w = parseFloat(workers), b = parseFloat(blastAmount);
-    if (!w) return null;
-    const qPeople = w * 6;
-    const qBlast = shotfiring === "yes" && b ? Math.ceil(b * 40 / 20) : 0;
-    const qMin = mineType === "deep" ? w * 1.5 * 60 : w * 1.2 * 60;
-    const qFinal = Math.ceil(Math.max(qPeople + qBlast, qMin) / 50) * 50;
-    return { qPeople, qBlast, qMin: Math.round(qMin), qFinal };
-  };
-
-  const vr = calcVent(), wr = calcWater(), gr = calcGas();
-
-  const inp = "w-full bg-white border border-[#dce6f0] rounded px-3 py-2.5 text-sm text-[#0d1f35] placeholder:text-[#9fb3c8] focus:outline-none focus:border-[#0e63b0] focus:ring-2 focus:ring-[rgba(14,99,176,0.1)] transition-all";
-  const labelCls = "block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5";
-
-  const TABS = [
-    { id: "vent" as const, label: "Вентсеть" },
-    { id: "water" as const, label: "Водоотлив" },
-    { id: "gas" as const, label: "Газовый баланс" },
-  ];
-
-  return (
-    <div className="bg-white rounded-lg border border-[#dce6f0] shadow-sm overflow-hidden">
-      <div className="border-b border-[#dce6f0] flex">
-        {TABS.map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)}
-            className={`px-6 py-3.5 text-sm font-semibold transition-all border-b-2 ${
-              tab === t.id
-                ? "border-[#0e63b0] text-[#0e63b0] bg-[#f0f7ff]"
-                : "border-transparent text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f8fbff]"
-            }`}>
-            {t.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="p-6">
-        {tab === "vent" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div><label className={labelCls}>Длина выработки, м</label><input type="number" value={length} onChange={e => setLength(e.target.value)} placeholder="например: 850" className={inp} /></div>
-              <div><label className={labelCls}>Площадь сечения, м²</label><input type="number" value={section} onChange={e => setSection(e.target.value)} placeholder="например: 12.5" className={inp} /></div>
-              <div><label className={labelCls}>Расход воздуха, м³/с</label><input type="number" value={airflow} onChange={e => setAirflow(e.target.value)} placeholder="например: 18" className={inp} /></div>
-              <div>
-                <label className={labelCls}>Шероховатость стенок α</label>
-                <select value={roughness} onChange={e => setRoughness(e.target.value)} className={inp}>
-                  <option value="0.15">0.15 — крепь металлическая</option>
-                  <option value="0.25">0.25 — бетонная затяжка</option>
-                  <option value="0.40">0.40 — набрызг-бетон</option>
-                  <option value="0.60">0.60 — без крепи (скальные породы)</option>
-                  <option value="0.90">0.90 — деревянная крепь</option>
-                </select>
-              </div>
-            </div>
-            <div className="bg-[#f4f7fb] rounded-lg p-5">
-              {vr ? (
-                <div>
-                  <div className="text-xs font-semibold text-[#0e63b0] uppercase tracking-wide mb-4">Результаты расчёта</div>
-                  <div className="space-y-4">
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Депрессия выработки</div>
-                      <div className="text-3xl font-bold text-[#0d1f35]">{vr.depr} <span className="text-base font-normal text-[#5a6e82]">Па</span></div>
-                    </div>
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Скорость воздуха</div>
-                      <div className="text-2xl font-bold text-[#0e63b0]">{vr.vms} <span className="text-base font-normal text-[#5a6e82]">м/с</span></div>
-                      <div className="text-xs font-semibold mt-1" style={{ color: vr.c }}>{vr.t}</div>
-                    </div>
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Аэродинамическое сопротивление R</div>
-                      <div className="text-lg font-bold text-[#0d1f35] font-mono">{vr.R} <span className="text-xs font-normal text-[#5a6e82]">кг/м⁷</span></div>
-                    </div>
-                    <div className="text-xs text-[#5a6e82] bg-[#e8f4fd] rounded p-3" style={{ borderLeft: "3px solid #0e63b0" }}>
-                      Расчёт по РД 06-356-00. Нормы: до 4 м/с в тупиковых, до 8 м/с в сквозных выработках рудников.
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full py-8 text-center">
-                  <div className="icon-box mb-3"><Icon name="Wind" size={24} style={{ color: "#0e63b0" }} /></div>
-                  <p className="text-sm text-[#5a6e82]">Введите параметры выработки<br />для расчёта депрессии</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {tab === "water" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div><label className={labelCls}>Глубина водоотлива, м</label><input type="number" value={levels} onChange={e => setLevels(e.target.value)} placeholder="например: 480" className={inp} /></div>
-              <div><label className={labelCls}>Нормальный приток воды, м³/ч</label><input type="number" value={inflow} onChange={e => setInflow(e.target.value)} placeholder="например: 120" className={inp} /></div>
-              <div><label className={labelCls}>Диаметр трубопровода, мм (опц.)</label><input type="number" value={pipeDiam} onChange={e => setPipeDiam(e.target.value)} placeholder="например: 200" className={inp} /></div>
-            </div>
-            <div className="bg-[#f4f7fb] rounded-lg p-5">
-              {wr ? (
-                <div>
-                  <div className="text-xs font-semibold text-[#0e63b0] uppercase tracking-wide mb-4">Результаты расчёта</div>
-                  <div className="space-y-3">
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Нормальный приток</div>
-                      <div className="text-3xl font-bold text-[#0d1f35]">{wr.qNormal} <span className="text-base font-normal text-[#5a6e82]">м³/ч</span></div>
-                    </div>
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Максимальный приток (×1.5)</div>
-                      <div className="text-2xl font-bold text-[#0e63b0]">{wr.qMax} <span className="text-base font-normal text-[#5a6e82]">м³/ч</span></div>
-                    </div>
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Требуемая мощность насоса</div>
-                      <div className="text-2xl font-bold text-[#0d1f35]">{wr.power} <span className="text-base font-normal text-[#5a6e82]">кВт</span></div>
-                    </div>
-                    {wr.velocity && (
-                      <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                        <div className="text-xs text-[#5a6e82] mb-1">Скорость в трубопроводе</div>
-                        <div className="text-xl font-bold text-[#0d1f35]">{wr.velocity} <span className="text-sm font-normal text-[#5a6e82]">м/с</span></div>
-                      </div>
-                    )}
-                    <div className="text-xs text-[#5a6e82]" style={{ borderLeft: "3px solid #0e63b0", paddingLeft: "10px", background: "#e8f4fd", padding: "10px 10px 10px 13px", borderRadius: "4px" }}>
-                      По ФНП и ЕПБ. КПД насоса — 0.70. Коэффициент запаса по максимальному притоку — 1.5.
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full py-8 text-center">
-                  <div className="icon-box mb-3"><Icon name="Droplets" size={24} style={{ color: "#0e63b0" }} /></div>
-                  <p className="text-sm text-[#5a6e82]">Введите глубину и приток воды<br />для расчёта водоотлива</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {tab === "gas" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div>
-                <label className={labelCls}>Тип предприятия</label>
-                <select value={mineType} onChange={e => setMineType(e.target.value)} className={inp}>
-                  <option value="ore">Рудник (медь, никель, золото, железо)</option>
-                  <option value="potash">Калийный / соляной рудник</option>
-                  <option value="deep">Глубокий рудник (более 700 м)</option>
-                  <option value="emergency">ВГСЧ / аварийный расчёт</option>
-                </select>
-              </div>
-              <div><label className={labelCls}>Число работающих в смене, чел.</label><input type="number" value={workers} onChange={e => setWorkers(e.target.value)} placeholder="например: 45" className={inp} /></div>
-              <div>
-                <label className={labelCls}>Взрывные работы в смене</label>
-                <select value={shotfiring} onChange={e => setShotfiring(e.target.value)} className={inp}>
-                  <option value="yes">Да</option>
-                  <option value="no">Нет</option>
-                </select>
-              </div>
-              {shotfiring === "yes" && (
-                <div><label className={labelCls}>Масса ВВ, кг</label><input type="number" value={blastAmount} onChange={e => setBlastAmount(e.target.value)} placeholder="например: 120" className={inp} /></div>
-              )}
-            </div>
-            <div className="bg-[#f4f7fb] rounded-lg p-5">
-              {gr ? (
-                <div>
-                  <div className="text-xs font-semibold text-[#0e63b0] uppercase tracking-wide mb-4">Минимальный расход воздуха</div>
-                  <div className="space-y-3">
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">По числу работающих</div>
-                      <div className="text-2xl font-bold text-[#0d1f35]">{gr.qPeople} <span className="text-sm font-normal text-[#5a6e82]">м³/мин</span></div>
-                    </div>
-                    {gr.qBlast > 0 && (
-                      <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                        <div className="text-xs text-[#5a6e82] mb-1">По взрывным работам</div>
-                        <div className="text-2xl font-bold text-[#d97706]">{gr.qBlast} <span className="text-sm font-normal text-[#5a6e82]">м³/мин</span></div>
-                      </div>
-                    )}
-                    <div className="bg-white rounded-lg p-4 border border-[#dce6f0]">
-                      <div className="text-xs text-[#5a6e82] mb-1">Норма ФНП</div>
-                      <div className="text-xl font-bold text-[#0d1f35]">{gr.qMin} <span className="text-sm font-normal text-[#5a6e82]">м³/мин</span></div>
-                    </div>
-                    <div className="bg-[#0e63b0] rounded-lg p-4">
-                      <div className="text-xs text-[#93c5fd] mb-1">Принятый расход воздуха</div>
-                      <div className="text-3xl font-bold text-white">{gr.qFinal} <span className="text-base font-normal text-[#93c5fd]">м³/мин</span></div>
-                      <div className="text-xs text-green-300 font-semibold mt-1">✓ ПДК по вредным газам обеспечено</div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full py-8 text-center">
-                  <div className="icon-box mb-3"><Icon name="Flame" size={24} style={{ color: "#0e63b0" }} /></div>
-                  <p className="text-sm text-[#5a6e82]">Укажите параметры предприятия<br />для расчёта газового баланса</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ── MAIN PAGE ─────────────────────────────────────────────────────────────────
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -361,7 +60,6 @@ export default function Index() {
       <header className="sticky top-0 z-50 bg-white border-b border-[#dce6f0] shadow-sm">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <a href="#" className="flex items-center gap-3">
               <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg" />
               <div>
@@ -383,8 +81,8 @@ export default function Index() {
               <a href="#contacts" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
                 Демо-версия
               </a>
-              <a href="#pricing" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
-                Приобрести
+              <a href="#contacts" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
+                Связаться
               </a>
             </div>
 
@@ -402,7 +100,7 @@ export default function Index() {
             ))}
             <div className="pt-3 flex flex-col gap-2 border-t border-[#dce6f0] mt-2">
               <a href="#contacts" className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Демо-версия</a>
-              <a href="#pricing" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Приобрести</a>
+              <a href="#contacts" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Связаться</a>
             </div>
           </div>
         )}
@@ -441,10 +139,6 @@ export default function Index() {
                   <Icon name="Play" size={16} />
                   Запросить демо
                 </a>
-                <a href="#calculator" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center gap-2">
-                  <Icon name="Calculator" size={16} />
-                  Онлайн-расчёт
-                </a>
                 <a href="#docs" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center gap-2">
                   <Icon name="Download" size={16} />
                   Скачать демо
@@ -458,7 +152,7 @@ export default function Index() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[rgba(10,77,138,0.9)]">
                   <div className="flex flex-wrap gap-2">
                     {NORMS.slice(0, 4).map(n => (
-                      <span key={n} className="norm-badge bg-white/10 border-white/20 text-white" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "#e0f2fe" }}>{n.split("«")[0]}</span>
+                      <span key={n} className="norm-badge" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", color: "#e0f2fe" }}>{n.split("«")[0]}</span>
                     ))}
                   </div>
                 </div>
@@ -466,7 +160,6 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 pt-10 border-t border-white/20 anim-3">
             {ADVANTAGES.map(a => (
               <div key={a.num} className="text-center">
@@ -533,7 +226,7 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <img src={IMG_DASHBOARD} alt="Интерфейс системы" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
+              <img src={IMG_MINE} alt="Горно-рудное предприятие" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
               <div className="absolute -bottom-5 -right-5 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg">
                 <div className="text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1">Разработано с</div>
                 <div className="text-sm font-bold text-[#0d1f35]">ВНИМИ · СПбГУ</div>
@@ -554,7 +247,7 @@ export default function Index() {
               Полный цикл инженерных расчётов
             </h2>
             <p className="text-[#5a6e82] mt-3 max-w-xl mx-auto">
-              8 специализированных модулей, охватывающих все задачи вентиляции и водоснабжения подземных горных предприятий
+              8 специализированных модулей, охватывающих все задачи вентиляции и водоснабжения горно-рудных предприятий и МЧС ВГСЧ
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -574,28 +267,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── CALCULATOR ── */}
-      <section id="calculator" className="py-20">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <div className="section-rule mx-auto" />
-            <div className="tag-blue mb-3">Онлайн-калькулятор</div>
-            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
-              Предварительный расчёт параметров
-            </h2>
-            <p className="text-[#5a6e82] mt-3 max-w-xl mx-auto">
-              Три модуля: вентиляционная сеть, шахтный водоотлив, газовый баланс.
-              Полный расчёт с протоколом для Ростехнадзора — в программном комплексе.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Calculator />
-          </div>
-        </div>
-      </section>
-
       {/* ── DOCS ── */}
-      <section id="docs" className="py-20 bg-[#f4f7fb]">
+      <section id="docs" className="py-20">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div>
@@ -605,7 +278,7 @@ export default function Index() {
                 Вся документация на русском языке
               </h2>
               <p className="text-[#5a6e82] text-sm leading-relaxed mb-6">
-                Руководства, методики расчётов, видеоуроки и нормативная база — всё адаптировано под требования горных предприятий России.
+                Руководства, методики расчётов, видеоуроки и нормативная база — всё адаптировано под требования горно-рудных предприятий России и МЧС ВГСЧ.
               </p>
               <a href="#contacts" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0e63b0] hover:text-[#0a4d8a] transition-colors">
                 Получить полный пакет
@@ -630,96 +303,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── CASES ── */}
-      <section id="cases" className="py-20">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <div className="section-rule mx-auto" />
-            <div className="tag-blue mb-3">Реализованные проекты</div>
-            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
-              Кейсы горных предприятий
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {CASES.map(c => (
-              <div key={c.title} className="card-white rounded-xl overflow-hidden group">
-                <div className="relative h-44 overflow-hidden">
-                  <img src={c.img} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f35]/70 to-transparent" />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-semibold bg-[#0e63b0] text-white px-2 py-1 rounded">{c.type}</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="text-xs text-[#5a6e82] mb-1 font-medium">{c.company}</div>
-                  <h3 className="font-semibold text-[#0d1f35] text-sm mb-2">{c.title}</h3>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs text-[#5a6e82] bg-[#f4f7fb] border border-[#dce6f0] px-2 py-0.5 rounded">Глубина {c.depth}</span>
-                  </div>
-                  <p className="text-xs text-[#5a6e82] mb-3 leading-relaxed">{c.task}</p>
-                  <div className="flex items-start gap-2 p-3 bg-[#f0f7ff] rounded-lg border border-[#bee3f8]">
-                    <Icon name="TrendingUp" size={14} className="mt-0.5 shrink-0" style={{ color: "#0e63b0" }} />
-                    <span className="text-xs font-semibold text-[#0e63b0]">{c.result}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRICING ── */}
-      <section id="pricing" className="py-20 bg-[#f4f7fb]">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <div className="section-rule mx-auto" />
-            <div className="tag-blue mb-3">Стоимость лицензии</div>
-            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
-              Тарифы и лицензирование
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {PRICING.map(p => (
-              <div key={p.name}
-                className={`rounded-xl p-6 flex flex-col relative ${p.highlight
-                  ? "bg-[#0e63b0] text-white shadow-xl shadow-[rgba(14,99,176,0.3)]"
-                  : "bg-white border border-[#dce6f0] shadow-sm"}`}>
-                {p.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#f59e0b] text-white text-xs font-bold px-4 py-0.5 rounded-full tracking-wide">
-                    {p.badge}
-                  </div>
-                )}
-                <div className="mb-5">
-                  <div className={`text-xs font-semibold uppercase tracking-wide mb-2 ${p.highlight ? "text-[#93c5fd]" : "text-[#0e63b0]"}`}>{p.name}</div>
-                  <div className="flex items-baseline gap-1 mb-1">
-                    <span className={`font-display text-3xl font-bold ${p.highlight ? "text-white" : "text-[#0d1f35]"}`}>{p.price}</span>
-                    <span className={`text-sm ${p.highlight ? "text-[#93c5fd]" : "text-[#5a6e82]"}`}>{p.period}</span>
-                  </div>
-                  <p className={`text-xs ${p.highlight ? "text-[#bfdbfe]" : "text-[#5a6e82]"}`}>{p.desc}</p>
-                </div>
-                <div className="flex-1 space-y-2.5 mb-6">
-                  {p.features.map(f => (
-                    <div key={f} className="flex items-start gap-2">
-                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${p.highlight ? "bg-white/20" : "bg-[#e8f4fd]"}`}>
-                        <Icon name="Check" size={10} style={{ color: p.highlight ? "#fff" : "#0e63b0" }} />
-                      </div>
-                      <span className={`text-sm ${p.highlight ? "text-[#dbeafe]" : "text-[#5a6e82]"}`}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <button className={`w-full py-2.5 rounded-lg font-semibold text-sm transition-all ${p.highlight
-                  ? "bg-white text-[#0e63b0] hover:bg-[#f0f7ff]"
-                  : "gradient-blue-btn text-white hover:opacity-90"}`}>
-                  {p.price === "По запросу" ? "Получить коммерческое предложение" : "Оформить лицензию"}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CONTACTS ── */}
-      <section id="contacts" className="py-20">
+      <section id="contacts" className="py-20 bg-[#f4f7fb]">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -731,7 +316,6 @@ export default function Index() {
               <p className="text-[#5a6e82] leading-relaxed mb-8 max-w-md">
                 Оставьте заявку — технический менеджер свяжется в течение рабочего дня, проведёт демонстрацию и поможет подобрать конфигурацию под ваше предприятие.
               </p>
-
               <div className="space-y-4 mb-8">
                 {[
                   { icon: "MapPin", label: "Адрес", val: "г. Москва, ул. Профсоюзная, 65, офис 318" },
@@ -751,8 +335,6 @@ export default function Index() {
                   </div>
                 ))}
               </div>
-
-              <img src={IMG_AERIAL} alt="Горное предприятие" className="w-full aspect-video object-cover rounded-xl border border-[#dce6f0] shadow-sm" />
             </div>
 
             <div className="bg-white rounded-xl border border-[#dce6f0] shadow-sm p-8">
@@ -771,7 +353,7 @@ export default function Index() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Предприятие</label>
-                    <input type="text" value={form.org} onChange={e => setForm({ ...form, org: e.target.value })} placeholder="ОАО «Шахта №5»" className={inp} />
+                    <input type="text" value={form.org} onChange={e => setForm({ ...form, org: e.target.value })} placeholder="ОАО «Рудник»" className={inp} />
                   </div>
                 </div>
                 <div>
@@ -785,7 +367,7 @@ export default function Index() {
                 <div>
                   <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Тип предприятия / задача</label>
                   <textarea value={form.msg} onChange={e => setForm({ ...form, msg: e.target.value })}
-                    placeholder="Угольная шахта, 3 горизонта, нужен расчёт вентиляционной сети и ПЛА"
+                    placeholder="Горно-рудное предприятие, нужен расчёт вентиляционной сети и ПЛА для ВГСЧ"
                     rows={4} className={`${inp} resize-none`} />
                 </div>
                 <button className="w-full py-3 gradient-blue-btn text-white font-semibold rounded hover:opacity-90 transition-opacity shadow-sm">
