@@ -251,7 +251,7 @@ export default function Index() {
                 {[
                   { icon: "MapPin", label: "Адрес", val: "Республика Башкортостан, г. Сибай, ул. Куйбышева, 20" },
                   { icon: "Phone", label: "Телефон", val: "+7 (495) 123-45-67" },
-                  { icon: "Mail", label: "Email", val: "info@пв-система.рф" },
+                  { icon: "Mail", label: "Email", val: "pvsistema@mail.ru" },
                   { icon: "Globe", label: "Сайт", val: "ПВСистема.рф" },
 
                 ].map(c => (
@@ -341,7 +341,7 @@ export default function Index() {
               <div className="text-xs font-semibold text-[#93c5fd] uppercase tracking-wide mb-4">Контакты</div>
               <div className="space-y-2 text-sm text-[#94a3b8]">
                 <div>+7 (495) 123-45-67</div>
-                <div>info@пв-система.рф</div>
+                <div>pvsistema@mail.ru</div>
                 <div>ПВСистема.рф</div>
               </div>
             </div>
