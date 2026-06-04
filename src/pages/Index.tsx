@@ -78,8 +78,8 @@ export default function Index() {
             </nav>
 
             <div className="hidden xl:flex items-center gap-3">
-              <a href="#contacts" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
-                Демо-версия
+              <a href="#docs" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
+                Скачать
               </a>
               <a href="#contacts" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
                 Связаться
@@ -116,14 +116,13 @@ export default function Index() {
         <div className="container max-w-7xl mx-auto px-6 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-tight mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
-                Программный комплекс<br />
-                <span className="text-[#7dd3fc]">ПВ-Система</span>
+              <h1 className="font-display leading-tight mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
+                <span className="text-[clamp(1.25rem,3vw,2rem)] font-semibold text-[#bfdbfe]">Программный комплекс</span><br />
+                <span className="text-[clamp(2rem,5vw,3.5rem)] text-[#7dd3fc]">ПВ-Система</span>
               </h1>
 
               <p className="text-[#bfdbfe] text-lg leading-relaxed mb-8 max-w-lg anim-1">
-                Расчёт вентиляции горно-рудных предприятий, водоотлива и водоснабжения рудников.
-                Документация для Ростехнадзора и подразделений МЧС ВГСЧ.
+                Проектирование вентиляции и водоснабжения для горно-рудных предприятий.
               </p>
 
               <div className="flex flex-wrap gap-3 anim-2">
