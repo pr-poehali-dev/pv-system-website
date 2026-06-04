@@ -150,10 +150,9 @@ export default function Index() {
                 <div className="text-sm font-semibold text-[#0d1f35] mb-2">Вентиляционные задачи:</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {[
-                    "Расчёт нормального воздухораспределения",
+                    "Расчёт воздухораспределения",
                     "Воздухораспределение при пожаре",
                     "Расчёт устойчивости при пожаре",
-                    "Расчёт устойчивости при разрушении шлюзов",
                     "Расчёт баланса воздуха",
                   ].map(t => (
                     <div key={t} className="flex items-center gap-2.5">
@@ -183,13 +182,7 @@ export default function Index() {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-[#f0f7ff] rounded-lg border border-[#bee3f8]">
-                <img src={LOGO_URL} alt="ПВ-Система" className="h-12 w-12 object-contain rounded-lg" />
-                <div>
-                  <div className="text-sm font-bold text-[#0d1f35]">ПВ-Система.рф</div>
-                  <div className="text-xs text-[#5a6e82]">Свидетельство о регистрации программы для ЭВМ · Роспатент · горно-рудные предприятия и МЧС ВГСЧ</div>
-                </div>
-              </div>
+
             </div>
             <div className="relative">
               <img src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/080f4e0d-f56f-4c8c-af30-145bd2af632b.jpg" alt="Вентиляция горных выработок" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
