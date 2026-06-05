@@ -272,7 +272,7 @@ export default function Index() {
               <div className="flex items-center gap-3 mb-6 pb-5 border-b border-[#dce6f0]">
                 <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg" />
                 <div>
-                  <div className="font-bold text-[#0d1f35]">Заявка на демонстрацию</div>
+                  <div className="font-bold text-[#0d1f35]">Заказать</div>
                   <div className="text-xs text-[#5a6e82]">Ответим в течение рабочего дня</div>
                 </div>
               </div>
