@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+
 import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
@@ -37,7 +37,7 @@ const ADVANTAGES = [
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [licenseOpen, setLicenseOpen] = useState(false);
+
   const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", msg: "" });
 
   const inp = "w-full bg-white border border-[#dce6f0] rounded px-3 py-2.5 text-sm text-[#0d1f35] placeholder:text-[#9fb3c8] focus:outline-none focus:border-[#0e63b0] focus:ring-2 focus:ring-[rgba(14,99,176,0.1)] transition-all";
@@ -356,22 +356,19 @@ export default function Index() {
             <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
               <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
-              <button onClick={() => setLicenseOpen(true)} className="hover:text-white transition-colors">Лицензионное соглашение</button>
+              <div className="relative group">
+                <span className="cursor-default hover:text-white transition-colors">Лицензионное соглашение</span>
+                <div className="absolute bottom-full right-0 mb-2 w-72 bg-white text-gray-800 text-xs rounded-lg shadow-xl p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                  <div className="font-semibold text-sm mb-2">Лицензионное соглашение</div>
+                  <p className="leading-relaxed">Горно-рудным предприятиям программный комплекс <span className="whitespace-nowrap">ПВ-Система</span> предоставляется по платной годовой подписке.</p>
+                  <div className="absolute bottom-[-6px] right-4 w-3 h-3 bg-white rotate-45 shadow-md"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </footer>
 
-      <Dialog open={licenseOpen} onOpenChange={setLicenseOpen}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle>Лицензионное соглашение</DialogTitle>
-          </DialogHeader>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Горно-рудным предприятиям программный комплекс ПВ-Система предоставляется по платной годовой подписке.
-          </p>
-        </DialogContent>
-      </Dialog>
 
     </div>
   );
