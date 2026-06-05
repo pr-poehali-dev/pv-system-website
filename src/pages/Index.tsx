@@ -124,9 +124,22 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="relative anim-1 mt-6 lg:mt-0">
+            <div className="relative anim-1 mt-6 lg:mt-0 pb-6 pr-6">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-2xl">
                 <img src={IMG_MINE} alt="ПВ-Система в работе" className="w-full aspect-[4/3] object-cover opacity-80" />
+              </div>
+              <div className="absolute bottom-0 right-0 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[150px]">
+                <div className="flex items-center gap-2">
+                  <div className="flex flex-col gap-[3px]">
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #dce6f0" }} />
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#0039A6" }} />
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#D52B1E" }} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-[#0d1f35] leading-tight">Сделано в России</div>
+                    <div className="text-[10px] text-[#5a6e82]">Российское ПО</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -184,21 +197,8 @@ export default function Index() {
               </div>
 
             </div>
-            <div className="relative pb-6 pr-6 lg:pb-5 lg:pr-5">
+            <div className="relative">
               <img src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/080f4e0d-f56f-4c8c-af30-145bd2af632b.jpg" alt="Вентиляция горных выработок" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
-              <div className="absolute bottom-0 right-0 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[150px]">
-                <div className="flex items-center gap-2">
-                  <div className="flex flex-col gap-[3px]">
-                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #dce6f0" }} />
-                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#0039A6" }} />
-                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#D52B1E" }} />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-[#0d1f35] leading-tight">Сделано в России</div>
-                    <div className="text-[10px] text-[#5a6e82]">Российское ПО</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
