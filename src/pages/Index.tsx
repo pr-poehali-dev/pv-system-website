@@ -197,8 +197,20 @@ export default function Index() {
               </div>
 
             </div>
-            <div className="relative">
-              <img src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/080f4e0d-f56f-4c8c-af30-145bd2af632b.jpg" alt="Вентиляция горных выработок" className="w-full aspect-[4/3] object-cover rounded-xl border border-[#dce6f0] shadow-md" />
+            <div className="relative rounded-xl border border-[#dce6f0] shadow-md overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <iframe
+                src="https://xn--80adjlvopbj.xn--p1ai"
+                title="ПВ-Система"
+                className="absolute top-0 left-0 rounded-xl"
+                style={{
+                  width: "200%",
+                  height: "200%",
+                  transform: "scale(0.5)",
+                  transformOrigin: "top left",
+                  border: "none",
+                  pointerEvents: "none",
+                }}
+              />
             </div>
           </div>
         </div>
