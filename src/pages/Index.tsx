@@ -201,7 +201,7 @@ export default function Index() {
               <img
                 src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/f853c016-d03f-4a10-97e0-db0a03334dad.jpg"
                 alt="Интерфейс программы ПВ-Система"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
