@@ -197,11 +197,22 @@ export default function Index() {
               </div>
 
             </div>
-            <div className="relative rounded-xl border border-[#dce6f0] shadow-md overflow-hidden">
-              <img
-                src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/0b300d41-c965-417b-bebc-b73a3f4c2993.png"
-                alt="Интерфейс ПВ-Система"
-                className="w-full object-cover"
+            <div className="relative rounded-xl border border-[#dce6f0] shadow-md overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <iframe
+                src="https://xn--80adjlvopbj.xn--p1ai"
+                title="ПВ-Система.рф"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "167%",
+                  height: "167%",
+                  transform: "scale(0.6)",
+                  transformOrigin: "top left",
+                  border: "none",
+                  pointerEvents: "none",
+                  borderRadius: "12px",
+                }}
               />
             </div>
           </div>
