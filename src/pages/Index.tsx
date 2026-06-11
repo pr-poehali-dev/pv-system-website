@@ -348,6 +348,7 @@ export default function Index() {
               <div className="text-xs font-semibold text-[#93c5fd] uppercase tracking-wide mb-4">Контакты</div>
               <div className="space-y-2 text-sm text-[#94a3b8]">
                 <div>+7 (960) 392-42-55</div>
+                <div>+7 (933) 044-70-17 (поддержка)</div>
                 <div>pvsistema@mail.ru</div>
                 <div>ПВСистема.рф</div>
               </div>
