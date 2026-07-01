@@ -201,7 +201,7 @@ export default function Index() {
             </div>
             <div className="relative rounded-xl border border-[#dce6f0] shadow-md overflow-hidden" style={{ aspectRatio: "4/3" }}>
               <img
-                src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/f853c016-d03f-4a10-97e0-db0a03334dad.jpg"
+                src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/e0788966-3f55-4463-a813-3246f11cd7d6.png"
                 alt="Интерфейс программы ПВ-Система"
                 className="w-full h-full object-contain"
               />
