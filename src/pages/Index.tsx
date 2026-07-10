@@ -35,8 +35,28 @@ const ADVANTAGES = [
 ];
 
 
+const CERTIFICATE_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/cb9cf69b-61fe-486f-8d29-59440cf3ff71.pdf";
+
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleDownloadCertificate = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(CERTIFICATE_URL);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "ПВ-Система_Сертификат_соответствия.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch {
+      window.open(CERTIFICATE_URL, "_blank");
+    }
+  };
 
   const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", msg: "" });
 
@@ -357,7 +377,7 @@ export default function Index() {
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[#64748b]">
             <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
-              <a href="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/cb9cf69b-61fe-486f-8d29-59440cf3ff71.pdf" download="ПВ-Система_Сертификат_соответствия.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Сертификат соответствия</a>
+              <a href={CERTIFICATE_URL} onClick={handleDownloadCertificate} className="hover:text-white transition-colors">Сертификат соответствия</a>
               <div className="relative group">
                 <span className="cursor-default hover:text-white transition-colors">Лицензионное соглашение</span>
                 <div className="absolute bottom-full right-0 mb-2 w-72 bg-white text-gray-800 text-xs rounded-lg shadow-xl p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
