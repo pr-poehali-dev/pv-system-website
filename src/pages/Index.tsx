@@ -357,7 +357,7 @@ export default function Index() {
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[#64748b]">
             <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+              <a href="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/46ac0b21-6e2a-4540-a036-e912547cefe0.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Сертификат соответствия</a>
               <div className="relative group">
                 <span className="cursor-default hover:text-white transition-colors">Лицензионное соглашение</span>
                 <div className="absolute bottom-full right-0 mb-2 w-72 bg-white text-gray-800 text-xs rounded-lg shadow-xl p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
