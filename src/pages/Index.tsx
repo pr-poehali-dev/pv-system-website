@@ -115,9 +115,9 @@ export default function Index() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 anim-2">
-                <a href="#docs" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
-                  <Icon name="Download" size={16} />
-                  Скачать демо
+                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
+                  <Icon name="Play" size={16} />
+                  Попробовать
                 </a>
                 <a href="#contacts" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <Icon name="Mail" size={16} />
