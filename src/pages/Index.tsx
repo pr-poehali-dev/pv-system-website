@@ -41,6 +41,31 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", msg: "" });
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<null | "ok" | "err">(null);
+
+  const submitOrder = async () => {
+    if (!form.name.trim() || (!form.email.trim() && !form.phone.trim())) {
+      setStatus("err");
+      return;
+    }
+    setSending(true);
+    setStatus(null);
+    try {
+      const res = await fetch("https://functions.poehali.dev/2f5fc8e0-0a17-4e4e-9142-bf9944b2a923", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("ok");
+      setForm({ name: "", org: "", email: "", phone: "", msg: "" });
+    } catch {
+      setStatus("err");
+    } finally {
+      setSending(false);
+    }
+  };
 
   const inp = "w-full bg-white border border-[#dce6f0] rounded px-3 py-2.5 text-sm text-[#0d1f35] placeholder:text-[#9fb3c8] focus:outline-none focus:border-[#0e63b0] focus:ring-2 focus:ring-[rgba(14,99,176,0.1)] transition-all";
 
@@ -310,9 +335,15 @@ export default function Index() {
                     placeholder="Горно-рудное предприятие, нужен расчёт вентиляционной сети и ПЛА для ВГСЧ"
                     rows={4} className={`${inp} resize-none`} />
                 </div>
-                <button className="w-full py-3 gradient-blue-btn text-white font-semibold rounded hover:opacity-90 transition-opacity shadow-sm">
-                  Отправить заявку
+                <button onClick={submitOrder} disabled={sending} className="w-full py-3 gradient-blue-btn text-white font-semibold rounded hover:opacity-90 transition-opacity shadow-sm disabled:opacity-60 disabled:cursor-not-allowed">
+                  {sending ? "Отправляем..." : "Отправить заявку"}
                 </button>
+                {status === "ok" && (
+                  <p className="text-sm text-green-600 text-center font-medium">Заявка отправлена! Мы свяжемся с вами в течение рабочего дня.</p>
+                )}
+                {status === "err" && (
+                  <p className="text-sm text-red-600 text-center font-medium">Не удалось отправить. Укажите имя и контакт (email или телефон) и попробуйте ещё раз.</p>
+                )}
                 <p className="text-xs text-[#9fb3c8] text-center">
                   Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных
                 </p>
