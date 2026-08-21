@@ -36,6 +36,7 @@ const ADVANTAGES = [
 
 
 const CERTIFICATE_URL = "/files/PV-Sistema-Sertifikat-sootvetstviya.pdf";
+const REGISTRATION_URL = "/files/PV-Sistema-Gosudarstvennaya-registraciya.pdf";
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -391,6 +392,7 @@ export default function Index() {
             <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
               <a href={CERTIFICATE_URL} download="ПВ-Система_Сертификат_соответствия.pdf" className="hover:text-white transition-colors">Сертификат соответствия</a>
+              <a href={REGISTRATION_URL} download="ПВ-Система_Государственная_регистрация.pdf" className="hover:text-white transition-colors">Государственная регистрация</a>
               <div className="relative group">
                 <span className="cursor-default hover:text-white transition-colors">Лицензионное соглашение</span>
                 <div className="absolute bottom-full right-0 mb-2 w-72 bg-white text-gray-800 text-xs rounded-lg shadow-xl p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
