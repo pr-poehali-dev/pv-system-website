@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Icon from "@/components/ui/icon";
 
@@ -10,6 +11,7 @@ const NAV = [
   { label: "Возможности", href: "#modules" },
   { label: "Обучение", href: "#training" },
   { label: "Контакты", href: "#contacts" },
+  { label: "Другое ПО", href: "/other-software", page: true },
 ];
 
 const MODULES = [
@@ -123,7 +125,12 @@ export default function Index() {
             </a>
 
             <nav className="hidden xl:flex items-center gap-1">
-              {NAV.map(l => (
+              {NAV.map(l => l.page ? (
+                <Link key={l.href} to={l.href}
+                  className="px-3 py-2 text-sm text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-semibold">
+                  {l.label}
+                </Link>
+              ) : (
                 <a key={l.href} href={l.href}
                   className="px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-medium">
                   {l.label}
@@ -148,7 +155,10 @@ export default function Index() {
 
         {menuOpen && (
           <div className="xl:hidden border-t border-[#dce6f0] bg-white py-4 px-6 space-y-1">
-            {NAV.map(l => (
+            {NAV.map(l => l.page ? (
+              <Link key={l.href} to={l.href} onClick={() => setMenuOpen(false)}
+                className="block px-3 py-2 text-sm text-[#0e63b0] font-semibold hover:bg-[#f0f7ff] rounded transition-all">{l.label}</Link>
+            ) : (
               <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                 className="block px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all">{l.label}</a>
             ))}
@@ -493,7 +503,9 @@ export default function Index() {
             <div>
               <div className="text-xs font-semibold text-[#93c5fd] uppercase tracking-wide mb-4">Разделы</div>
               <div className="space-y-2">
-                {NAV.map(l => (
+                {NAV.map(l => l.page ? (
+                  <Link key={l.href} to={l.href} className="block text-sm text-[#94a3b8] hover:text-white transition-colors">{l.label}</Link>
+                ) : (
                   <a key={l.href} href={l.href} className="block text-sm text-[#94a3b8] hover:text-white transition-colors">{l.label}</a>
                 ))}
               </div>
