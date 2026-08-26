@@ -40,6 +40,8 @@ def handler(event: dict, context) -> dict:
     email = (data.get('email') or '').strip()
     phone = (data.get('phone') or '').strip()
     msg = (data.get('msg') or '').strip()
+    product = (data.get('product') or '').strip()
+    seats = (data.get('seats') or '').strip()
 
     if not name or not (email or phone):
         return {
@@ -58,17 +60,24 @@ def handler(event: dict, context) -> dict:
             'body': json.dumps({'error': 'SMTP не настроен'}),
         }
 
+    subject = 'Заявка с сайта ПВ-Система'
+    if product:
+        subject = f'Заявка: {product}'
+
     body_text = (
-        'Новая заявка с сайта ПВ-Система\n\n'
+        f'Новая заявка с сайта ПВ-Система\n\n'
+        f'Продукт: {product or "ПВ-Система (вентиляция)"}\n'
         f'Имя: {name}\n'
         f'Предприятие: {org or "—"}\n'
         f'Email: {email or "—"}\n'
         f'Телефон: {phone or "—"}\n'
-        f'Тип предприятия / задача:\n{msg or "—"}\n'
     )
+    if seats:
+        body_text += f'Количество рабочих мест: {seats}\n'
+    body_text += f'Тип предприятия / задача:\n{msg or "—"}\n'
 
     letter = MIMEText(body_text, 'plain', 'utf-8')
-    letter['Subject'] = Header('Заявка с сайта ПВ-Система', 'utf-8')
+    letter['Subject'] = Header(subject, 'utf-8')
     letter['From'] = smtp_user
     letter['To'] = smtp_user
     if email:

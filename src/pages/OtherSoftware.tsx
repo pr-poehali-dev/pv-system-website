@@ -30,6 +30,11 @@ const FEATURES = [
     title: "Конвертация",
     items: ["В Word — редактируемый текст", "В Excel — табличные данные", "В JPG — каждая страница", "В обычный текст TXT", "Распознавание сканов (OCR)"],
   },
+  {
+    icon: "Scan",
+    title: "Сканирование документов",
+    items: ["Работа с любым сканером или МФУ", "Сканирование сразу в PDF", "Многостраничный документ одним файлом", "Автоповорот и выравнивание страниц", "Распознавание текста при сканировании"],
+  },
 ];
 
 const SECURITY = [
@@ -72,8 +77,40 @@ const STEPS = [
   { num: "04", title: "Запуск", desc: "Установка, настройка и обучение сотрудников" },
 ];
 
+const ORDER_URL = "https://functions.poehali.dev/2f5fc8e0-0a17-4e4e-9142-bf9944b2a923";
+
 export default function OtherSoftware() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", seats: "", msg: "" });
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<null | "ok" | "err">(null);
+
+  const submitOrder = async () => {
+    if (!form.name.trim() || (!form.email.trim() && !form.phone.trim())) {
+      setStatus("err");
+      return;
+    }
+    setSending(true);
+    setStatus(null);
+    try {
+      const res = await fetch(ORDER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, product: "ПВ-Система PDF — демоверсия" }),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("ok");
+      setForm({ name: "", org: "", email: "", phone: "", seats: "", msg: "" });
+    } catch {
+      setStatus("err");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const inp = "w-full bg-white border border-[#dce6f0] rounded px-3 py-2.5 text-sm text-[#0d1f35] placeholder:text-[#9fb3c8] focus:outline-none focus:border-[#0e63b0] focus:ring-2 focus:ring-[rgba(14,99,176,0.1)] transition-all";
+  const lbl = "block text-xs font-semibold text-[#0d1f35] mb-1.5";
 
   return (
     <div className="min-h-screen bg-white text-[#0d1f35]">
@@ -209,7 +246,7 @@ export default function OtherSoftware() {
             <div className="tag-blue mb-3">Возможности</div>
             <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35]">Что умеет программа</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {FEATURES.map(f => (
               <div key={f.title} className="card-white rounded-xl p-6">
                 <div className="icon-box mb-4">
@@ -415,39 +452,118 @@ export default function OtherSoftware() {
       <section id="request" className="py-16 md:py-20 gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: "radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3) 0%, transparent 55%)" }} />
-        <div className="container max-w-4xl mx-auto px-4 sm:px-6 relative text-center">
-          <div className="text-[11px] font-semibold tracking-[0.15em] text-[#bfdbfe] mb-3">КОНТАКТЫ</div>
-          <h2 className="font-display text-[clamp(1.7rem,3.2vw,2.6rem)] text-[#7dd3fc] mb-8">Запросите демоверсию</h2>
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-9">
-            {[
-              { icon: "Phone", label: "Телефон", val: "+7 (905) 005-36-19", val2: "+7 (933) 044-70-17" },
-              { icon: "Mail", label: "Электронная почта", val: "pvsistema@mail.ru" },
-              { icon: "Globe", label: "Сайт", val: "пвсистема.рф" },
-            ].map(c => (
-              <div key={c.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5">
-                <Icon name={c.icon as "Phone"} size={20} className="mx-auto mb-3 text-[#7dd3fc]" />
-                <div className="text-[10px] uppercase tracking-wide text-[#bfdbfe] mb-1.5">{c.label}</div>
-                <div className="text-sm font-medium text-white">{c.val}</div>
-                {c.val2 && <div className="text-sm font-medium text-white mt-0.5">{c.val2}</div>}
+            <div>
+              <div className="text-[11px] font-semibold tracking-[0.15em] text-[#bfdbfe] mb-3">КОНТАКТЫ</div>
+              <h2 className="font-display text-[clamp(1.7rem,3.2vw,2.6rem)] text-[#7dd3fc] mb-4">Запросите демоверсию</h2>
+              <p className="text-[#bfdbfe] text-sm leading-relaxed mb-8">
+                Оставьте заявку — обсудим количество рабочих мест, пришлём демоверсию и коммерческое предложение.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                {[
+                  { icon: "Phone", label: "Телефон", val: "+7 (905) 005-36-19", val2: "+7 (933) 044-70-17" },
+                  { icon: "Mail", label: "Электронная почта", val: "pvsistema@mail.ru" },
+                  { icon: "Globe", label: "Сайт", val: "пвсистема.рф" },
+                ].map(c => (
+                  <div key={c.label} className="flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+                    <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
+                      <Icon name={c.icon as "Phone"} size={18} className="text-[#7dd3fc]" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[#bfdbfe] mb-0.5">{c.label}</div>
+                      <div className="text-sm font-medium text-white">{c.val}</div>
+                      {c.val2 && <div className="text-sm font-medium text-white mt-0.5">{c.val2}</div>}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 mb-7">
-            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
-              <Icon name="Play" size={16} />
-              Попробовать онлайн
-            </a>
-            <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-              <Icon name="Download" size={16} />
-              Скачать презентацию
-            </a>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2 text-sm">
+                  <Icon name="Play" size={15} />
+                  Попробовать онлайн
+                </a>
+                <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-5 py-2.5 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
+                  <Icon name="Download" size={15} />
+                  Скачать презентацию
+                </a>
+              </div>
 
-          <p className="text-xs text-[#bfdbfe]">
-            АНО ДПО «Учебный центр ГорГазНефть» · г. Сибай, ул. Куйбышева, д. 20, офис 32
-          </p>
+              <p className="text-xs text-[#bfdbfe]">
+                АНО ДПО «Учебный центр ГорГазНефть» · г. Сибай, ул. Куйбышева, д. 20, офис 32
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-xl">
+              <h3 className="font-display text-lg text-[#0d1f35] mb-1">Заявка на демоверсию</h3>
+              <p className="text-[#5a6e82] text-xs mb-6">Ответим в течение рабочего дня</p>
+
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={lbl}>Ваше имя *</label>
+                    <input type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Иван Петров" className={inp} />
+                  </div>
+                  <div>
+                    <label className={lbl}>Организация</label>
+                    <input type="text" value={form.org} onChange={e => setForm({ ...form, org: e.target.value })} placeholder="ОАО «Рудник»" className={inp} />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={lbl}>Электронная почта</label>
+                    <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="ivan@mine.ru" className={inp} />
+                  </div>
+                  <div>
+                    <label className={lbl}>Телефон</label>
+                    <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="+7 (___) ___-__-__" className={inp} />
+                  </div>
+                </div>
+                <div>
+                  <label className={lbl}>Количество рабочих мест</label>
+                  <select value={form.seats} onChange={e => setForm({ ...form, seats: e.target.value })} className={inp}>
+                    <option value="">Пока не определились</option>
+                    <option value="1 рабочее место">1 рабочее место</option>
+                    <option value="до 5 рабочих мест">до 5 рабочих мест</option>
+                    <option value="до 10 рабочих мест">до 10 рабочих мест</option>
+                    <option value="до 25 рабочих мест">до 25 рабочих мест</option>
+                    <option value="до 50 рабочих мест">до 50 рабочих мест</option>
+                    <option value="без ограничения">без ограничения</option>
+                  </select>
+                </div>
+                <div>
+                  <label className={lbl}>Комментарий</label>
+                  <textarea value={form.msg} onChange={e => setForm({ ...form, msg: e.target.value })}
+                    placeholder="Задачи, сроки, особые условия" rows={3} className={inp + " resize-none"} />
+                </div>
+
+                <button onClick={submitOrder} disabled={sending} className="w-full py-3 gradient-blue-btn text-white font-semibold rounded hover:opacity-90 transition-opacity shadow-sm disabled:opacity-60 disabled:cursor-not-allowed">
+                  {sending ? "Отправляем…" : "Запросить демоверсию"}
+                </button>
+
+                {status === "ok" && (
+                  <div className="flex items-start gap-2.5 bg-[#e8f7ee] border border-[#a7e0bd] rounded p-3">
+                    <Icon name="CircleCheck" size={16} style={{ color: "#1a7f43" }} className="shrink-0 mt-0.5" />
+                    <span className="text-xs text-[#1a7f43] leading-relaxed">Заявка отправлена. Свяжемся с вами в ближайшее время.</span>
+                  </div>
+                )}
+                {status === "err" && (
+                  <div className="flex items-start gap-2.5 bg-[#fdeaea] border border-[#f2b8b8] rounded p-3">
+                    <Icon name="CircleAlert" size={16} style={{ color: "#c0392b" }} className="shrink-0 mt-0.5" />
+                    <span className="text-xs text-[#c0392b] leading-relaxed">Укажите имя и хотя бы один контакт — почту или телефон.</span>
+                  </div>
+                )}
+
+                <p className="text-[11px] text-[#9fb3c8] leading-relaxed">
+                  Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
