@@ -8,6 +8,7 @@ const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5f
 const NAV = [
   { label: "О программе", href: "#about" },
   { label: "Возможности", href: "#modules" },
+  { label: "Обучение", href: "#training" },
   { label: "Контакты", href: "#contacts" },
 ];
 
@@ -37,6 +38,42 @@ const ADVANTAGES = [
 
 const CERTIFICATE_URL = "/files/PV-Sistema-Sertifikat-sootvetstviya.pdf";
 const REGISTRATION_URL = "/files/PV-Sistema-Gosudarstvennaya-registraciya.pdf";
+
+const TRAINING_FACTS = [
+  { icon: "Clock", label: "40 акад. часов", sub: "5 дней по 8 часов" },
+  { icon: "MonitorPlay", label: "Очно / дистанционно", sub: "с практикой за компьютером" },
+  { icon: "Users", label: "До 12 человек", sub: "в учебной группе" },
+  { icon: "GraduationCap", label: "Зачёт", sub: "самостоятельный расчёт модели рудника" },
+];
+
+const TRAINING_DAYS = [
+  { day: "День 1", title: "Интерфейс и построение вентиляционной сети", desc: "Рабочее пространство, навигация и проекции, топология из узлов и ветвей, импорт схем из «АэроСети», Ventsim, DXF." },
+  { day: "День 2", title: "Аэродинамика выработок и расчёт воздухораспределения", desc: "Сечения и сопротивления выработок, вентиляторы главного проветривания, метод Кросса и метод контурных расходов, естественная тяга." },
+  { day: "День 3", title: "Анализ результатов и вентиляционные сооружения", desc: "Визуальный анализ расчёта, депрессиограмма и эквивалентное отверстие, регулирование сети, расход воздуха по нормам." },
+  { day: "День 4", title: "Аварийные режимы: пожар, взрыв, вывод людей", desc: "Моделирование рудничного пожара и тепловой депрессии, устойчивость проветривания, расчёт путей вывода людей и маршрутов ВГСЧ." },
+  { day: "День 5", title: "Противопожарный трубопровод, отчётность, зачёт", desc: "Гидравлический расчёт пожарно-оросительного трубопровода, выгрузка документов и чертежей для ПЛА, итоговый зачёт." },
+];
+
+const TRAINING_FILES = [
+  {
+    icon: "FileText",
+    ext: "PDF",
+    title: "Программа обучения «ПВ-Система», 40 часов",
+    desc: "Полная программа курса в PDF: цели и задачи обучения, требования к слушателям, поурочный план всех пяти дней с разбивкой на теорию и практику, итоговый контроль.",
+    size: "318 КБ",
+    url: "/files/PV-Sistema-Programma-obucheniya-40h.pdf",
+    file: "ПВ-Система_Программа_обучения_40часов.pdf",
+  },
+  {
+    icon: "FileType2",
+    ext: "DOCX",
+    title: "Программа обучения «ПВ-Система», 40 часов",
+    desc: "Тот же документ в редактируемом формате Word — удобно адаптировать под учебный центр предприятия, добавить свои реквизиты и согласовать с отделом кадров.",
+    size: "46 КБ",
+    url: "/files/PV-Sistema-Programma-obucheniya-40h.docx",
+    file: "ПВ-Система_Программа_обучения_40часов.docx",
+  },
+];
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -269,6 +306,89 @@ export default function Index() {
       </section>
 
 
+
+      {/* ── TRAINING ── */}
+      <section id="training" className="py-16 md:py-20 bg-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="section-rule mx-auto" />
+            <div className="tag-blue mb-3">Обучение пользователей</div>
+            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
+              Курс подготовки на 40 академических часов
+            </h2>
+            <p className="text-[#5a6e82] mt-3 max-w-2xl mx-auto">
+              Практический курс для горных инженеров, специалистов службы аэрологической безопасности и вентиляции и ВГСЧ. От построения схемы рудника до расчёта аварийных режимов и подготовки документов ПЛА.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-5xl mx-auto">
+            {TRAINING_FACTS.map(f => (
+              <div key={f.label} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-5 text-center">
+                <div className="icon-box mx-auto mb-3">
+                  <Icon name={f.icon as "Clock"} size={20} style={{ color: "#0e63b0" }} />
+                </div>
+                <div className="font-semibold text-[#0d1f35] text-sm mb-1">{f.label}</div>
+                <div className="text-[#5a6e82] text-xs leading-relaxed">{f.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-12">
+            <h3 className="font-display text-lg text-[#0d1f35] mb-5">Программа по дням</h3>
+            <div className="space-y-3">
+              {TRAINING_DAYS.map(d => (
+                <div key={d.day} className="flex gap-4 bg-white border border-[#dce6f0] rounded-xl p-5 hover:border-[#0e63b0] transition-colors">
+                  <div className="shrink-0 w-16 text-center">
+                    <div className="text-[#0e63b0] font-display text-sm font-semibold">{d.day}</div>
+                    <div className="text-[10px] text-[#9fb3c8] mt-0.5">8 ч</div>
+                  </div>
+                  <div className="border-l border-[#dce6f0] pl-4">
+                    <div className="font-semibold text-[#0d1f35] text-sm mb-1.5 leading-snug">{d.title}</div>
+                    <div className="text-[#5a6e82] text-xs leading-relaxed">{d.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <h3 className="font-display text-lg text-[#0d1f35] mb-5">Материалы для скачивания</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {TRAINING_FILES.map(f => (
+                <a
+                  key={f.ext}
+                  href={f.url}
+                  download={f.file}
+                  className="group flex flex-col bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6 hover:border-[#0e63b0] hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="icon-box">
+                      <Icon name={f.icon as "FileText"} size={22} style={{ color: "#0e63b0" }} />
+                    </div>
+                    <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded">{f.ext}</span>
+                  </div>
+                  <h4 className="font-semibold text-[#0d1f35] text-sm mb-2 leading-snug">{f.title}</h4>
+                  <p className="text-[#5a6e82] text-xs leading-relaxed mb-5 flex-1">{f.desc}</p>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#dce6f0]">
+                    <span className="text-[11px] text-[#9fb3c8]">{f.size}</span>
+                    <span className="inline-flex items-center gap-1.5 text-[#0e63b0] text-xs font-semibold group-hover:gap-2.5 transition-all">
+                      Скачать
+                      <Icon name="Download" size={14} />
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div className="mt-6 flex items-start gap-3 bg-[#e8f4fd] border border-[#bee3f8] rounded-xl p-5">
+              <Icon name="Info" size={18} style={{ color: "#0e63b0" }} className="shrink-0 mt-0.5" />
+              <p className="text-[#0d1f35] text-xs leading-relaxed">
+                Обучение проводится на площадке заказчика или дистанционно. Для записи группы и согласования дат оставьте заявку в разделе{" "}
+                <a href="#contacts" className="text-[#0e63b0] font-semibold hover:underline">Контакты</a> или напишите на pvsistema@mail.ru.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── CONTACTS ── */}
       <section id="contacts" className="py-20 bg-white">
