@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
 const APP_SCREENSHOT = "/pv-pdf-screenshot.png";
-const DEMO_URL = "https://pdf-view-edit-convert--preview.poehali.dev/";
+const DOWNLOAD_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/89f965e5-02b6-4a9d-ad3b-f398e85e798a.exe";
 const PRESENTATION_URL = "/files/PV-Sistema-PDF-Presentation.pdf";
 
 const PROBLEMS = [
@@ -138,8 +138,8 @@ export default function OtherSoftware() {
               <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
                 Презентация
               </a>
-              <a href="#request" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
-                Запросить демо
+              <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
+                Скачать
               </a>
             </div>
 
@@ -154,7 +154,7 @@ export default function OtherSoftware() {
             <Link to="/" onClick={() => setMenuOpen(false)} className="block px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded">Главная</Link>
             <div className="pt-3 flex flex-col gap-2 border-t border-[#dce6f0] mt-2">
               <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Презентация</a>
-              <a href="#request" onClick={() => setMenuOpen(false)} className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Запросить демо</a>
+              <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Скачать для Windows</a>
             </div>
           </div>
         )}
@@ -180,9 +180,9 @@ export default function OtherSoftware() {
                 Просмотр, редактирование и конвертация документов PDF на рабочем месте — без передачи файлов в интернет.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
-                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
-                  <Icon name="Play" size={16} />
-                  Попробовать онлайн
+                <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
+                  <Icon name="MonitorDown" size={16} />
+                  Скачать для Windows
                 </a>
                 <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <Icon name="Download" size={16} />
@@ -289,9 +289,9 @@ export default function OtherSoftware() {
                   </div>
                 ))}
               </div>
-              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-7 px-5 py-3 gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm text-sm">
-                <Icon name="ExternalLink" size={16} />
-                Открыть демоверсию в браузере
+              <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="inline-flex items-center gap-2 mt-7 px-5 py-3 gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm text-sm">
+                <Icon name="MonitorDown" size={16} />
+                Скачать программу для Windows
               </a>
             </div>
             <div className="rounded-xl border border-[#dce6f0] shadow-md overflow-hidden bg-white">
@@ -482,9 +482,9 @@ export default function OtherSoftware() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2 text-sm">
-                  <Icon name="Play" size={15} />
-                  Попробовать онлайн
+                <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-5 py-2.5 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2 text-sm">
+                  <Icon name="MonitorDown" size={15} />
+                  Скачать для Windows
                 </a>
                 <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-5 py-2.5 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
                   <Icon name="Download" size={15} />
