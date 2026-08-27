@@ -189,6 +189,10 @@ export default function OtherSoftware() {
                   Презентация
                 </a>
               </div>
+              <p className="text-xs text-[#bfdbfe] mt-3 flex items-center justify-center lg:justify-start gap-2">
+                <Icon name="Monitor" size={13} />
+                Windows 10 / 11 · 64-бит · 88 МБ
+              </p>
             </div>
 
             <div className="relative mt-6 lg:mt-0">
@@ -293,6 +297,10 @@ export default function OtherSoftware() {
                 <Icon name="MonitorDown" size={16} />
                 Скачать программу для Windows
               </a>
+              <p className="text-xs text-[#5a6e82] mt-2.5 flex items-center gap-2">
+                <Icon name="Monitor" size={13} />
+                Windows 10 / 11 · 64-бит · 88 МБ
+              </p>
             </div>
             <div className="rounded-xl border border-[#dce6f0] shadow-md overflow-hidden bg-white">
               <img src={APP_SCREENSHOT} alt="Рабочее окно программы" className="w-full object-contain" />
@@ -491,6 +499,10 @@ export default function OtherSoftware() {
                   Скачать презентацию
                 </a>
               </div>
+              <p className="text-xs text-[#bfdbfe] mb-6 flex items-center gap-2 -mt-3">
+                <Icon name="Monitor" size={13} />
+                Windows 10 / 11 · 64-бит · 88 МБ
+              </p>
 
               <p className="text-xs text-[#bfdbfe]">
                 АНО ДПО «Учебный центр ГорГазНефть» · г. Сибай, ул. Куйбышева, д. 20, офис 32
