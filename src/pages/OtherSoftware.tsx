@@ -402,7 +402,7 @@ export default function OtherSoftware() {
               <div className="gradient-blue-btn text-white rounded-xl p-6 text-center shadow-sm">
                 <Icon name="Percent" size={22} className="mx-auto mb-2" />
                 <div className="font-display text-xl mb-1">Скидка 10 %</div>
-                <div className="text-xs text-white/85">при заключении договора до 01.07.2026</div>
+                <div className="text-xs text-white/85"></div>
               </div>
             </div>
           </div>
