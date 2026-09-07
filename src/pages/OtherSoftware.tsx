@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
 const APP_SCREENSHOT = "/pv-pdf-screenshot.png";
-const DOWNLOAD_URL = "https://cdn.poehali.dev/projects/bd691282-75ee-481f-a896-7c452858c845/bucket/6ceefe6b-1ff5-4531-907b-8951ef448de3.exe";
+const DOWNLOAD_URL = "https://cdn.poehali.dev/projects/bd691282-75ee-481f-a896-7c452858c845/bucket/bb6b589b-3889-4d64-9806-8590673f5b1e.exe";
 const PRESENTATION_URL = "/files/PV-Sistema-PDF-Presentation.pdf";
 
 const PROBLEMS = [
