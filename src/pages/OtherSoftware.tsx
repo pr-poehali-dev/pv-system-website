@@ -5,7 +5,7 @@ import Icon from "@/components/ui/icon";
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
 const APP_SCREENSHOT = "/pv-pdf-screenshot.png";
 const DOWNLOAD_URL = "https://cdn.poehali.dev/projects/bd691282-75ee-481f-a896-7c452858c845/bucket/bb6b589b-3889-4d64-9806-8590673f5b1e.exe";
-const PRESENTATION_URL = "/files/PV-Sistema-PDF-Presentation.pdf";
+const PRESENTATION_URL = "/files/PV-Sistema-PDF-Presentation.pptx";
 
 const PROBLEMS = [
   { icon: "CloudUpload", title: "Бесплатные онлайн-сервисы", desc: "Файл загружается на сторонний сервер — контроль над ним теряется." },
@@ -18,23 +18,42 @@ const FEATURES = [
   {
     icon: "Eye",
     title: "Просмотр",
-    items: ["Непрерывная прокрутка документа", "Разворот — две страницы рядом", "Подгонка по ширине и по странице", "Панель миниатюр", "Поиск по всему документу"],
+    items: ["Непрерывная прокрутка и вкладки", "Разворот — две страницы рядом", "Подгонка по ширине и по странице", "Панель миниатюр страниц", "Поиск по всему документу"],
   },
   {
     icon: "PenLine",
     title: "Редактирование",
-    items: ["Поворот страниц на 90°", "Удаление и перестановка", "Дублирование страниц", "Объединение документов", "Отмена — до 50 шагов"],
+    items: ["Поворот, удаление, перестановка", "Дублирование и вставка листов", "Объединение и извлечение страниц", "Надписи и закрашивание данных", "Отмена — до 50 шагов"],
   },
   {
     icon: "RefreshCw",
     title: "Конвертация",
-    items: ["В Word — редактируемый текст", "В Excel — табличные данные", "В JPG — каждая страница", "В обычный текст TXT", "Распознавание сканов (OCR)"],
+    items: ["В Word и Excel", "В JPG, PNG и HTML", "Из фото и сканов — в PDF", "В обычный текст TXT", "Распознавание сканов (OCR)"],
   },
+];
+
+const SCAN_FEATURES = [
   {
     icon: "Scan",
-    title: "Сканирование документов",
-    items: ["Работа с любым сканером или МФУ", "Сканирование сразу в PDF", "Многостраничный документ одним файлом", "Автоповорот и выравнивание страниц", "Распознавание текста при сканировании"],
+    title: "Сканирование",
+    items: ["Сканирование прямо в программе", "Пакетная съёмка пачки листов", "Повтор с теми же настройками", "Скан сразу в открытый документ", "Улучшение читаемости скана"],
   },
+  {
+    icon: "FileCog",
+    title: "Работа с файлом",
+    items: ["Сжатие — три уровня", "Извлечение нужных страниц", "Добавление чистых листов", "Печать с предпросмотром", "Копирование текста страницы"],
+  },
+  {
+    icon: "FilePlus",
+    title: "Создание PDF",
+    items: ["Из фотографий JPG и PNG", "Из снимков HEIC с iPhone", "Из текстовых файлов TXT", "Из сканов TIFF", "Из нескольких PDF сразу"],
+  },
+];
+
+const MANAGEMENT = [
+  { icon: "Users", title: "Учёт рабочих мест", desc: "Видно, на каких компьютерах работает лицензия и сколько мест занято." },
+  { icon: "ShieldCheck", title: "Обязательная версия", desc: "Устаревшие версии останавливаются до обновления — по решению администратора." },
+  { icon: "MousePointerClick", title: "Обновление в щелчок", desc: "Программа ставит его сама, файлы и настройки остаются на месте." },
 ];
 
 const SECURITY = [
@@ -53,12 +72,12 @@ const REASONS = [
 ];
 
 const PRICING = [
-  { seats: "1", perSeat: "12 000", total: "12 000" },
-  { seats: "5", perSeat: "9 600", total: "48 000" },
-  { seats: "10", perSeat: "8 500", total: "85 000" },
-  { seats: "25", perSeat: "7 600", total: "190 000" },
-  { seats: "50", perSeat: "6 800", total: "340 000" },
-  { seats: "Без ограничения", perSeat: "—", total: "560 000" },
+  { seats: "1", perSeat: "2 900", total: "2 900" },
+  { seats: "5", perSeat: "2 500", total: "12 500" },
+  { seats: "10", perSeat: "2 300", total: "23 000" },
+  { seats: "25", perSeat: "2 100", total: "52 500" },
+  { seats: "50", perSeat: "1 800", total: "90 000" },
+  { seats: "Без ограничения", perSeat: "—", total: "180 000" },
 ];
 
 const INCLUDED = ["Установка и настройка", "Обучение персонала", "Техническая поддержка", "Все обновления года"];
@@ -66,8 +85,8 @@ const INCLUDED = ["Установка и настройка", "Обучение 
 const COMPARE = [
   { name: "Adobe Acrobat Pro", note: "Подписка в валюте", price: "≈ 20 000 ₽", own: false },
   { name: "Foxit PDF Editor Pro", note: "Лицензия через реселлера", price: "≈ 19 500 ₽", own: false },
-  { name: "ПВ-Система PDF", note: "Одно рабочее место", price: "12 000 ₽", own: true },
-  { name: "ПВ-Система PDF", note: "При 50 рабочих местах", price: "6 800 ₽", own: true },
+  { name: "ПВ-Система PDF", note: "Одно рабочее место", price: "2 900 ₽", own: true },
+  { name: "ПВ-Система PDF", note: "При 50 рабочих местах", price: "1 800 ₽", own: true },
 ];
 
 const STEPS = [
@@ -135,7 +154,7 @@ export default function OtherSoftware() {
             </nav>
 
             <div className="hidden xl:flex items-center gap-3">
-              <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
+              <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pptx" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
                 Презентация
               </a>
               <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
@@ -153,7 +172,7 @@ export default function OtherSoftware() {
           <div className="xl:hidden border-t border-[#dce6f0] bg-white py-4 px-6 space-y-1">
             <Link to="/" onClick={() => setMenuOpen(false)} className="block px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded">Главная</Link>
             <div className="pt-3 flex flex-col gap-2 border-t border-[#dce6f0] mt-2">
-              <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Презентация</a>
+              <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pptx" className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Презентация</a>
               <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Скачать для Windows</a>
             </div>
           </div>
@@ -177,14 +196,14 @@ export default function OtherSoftware() {
                 <span className="text-[clamp(2rem,5vw,3.2rem)] text-[#7dd3fc]">ПВ-Система PDF</span>
               </h1>
               <p className="text-[#bfdbfe] text-base md:text-lg leading-relaxed mb-7 md:mb-8 max-w-lg mx-auto lg:mx-0">
-                Просмотр, редактирование и конвертация документов PDF на рабочем месте — без передачи файлов в интернет.
+                Просмотр, сканирование, редактирование и конвертация документов PDF на рабочем месте — без передачи файлов в интернет.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
                 <a href={DOWNLOAD_URL} download="ПВ-Система-PDF.exe" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
                   <Icon name="MonitorDown" size={16} />
                   Скачать для Windows
                 </a>
-                <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pptx" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <Icon name="Download" size={16} />
                   Презентация
                 </a>
@@ -250,7 +269,7 @@ export default function OtherSoftware() {
             <div className="tag-blue mb-3">Возможности</div>
             <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35]">Что умеет программа</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {FEATURES.map(f => (
               <div key={f.title} className="card-white rounded-xl p-6">
                 <div className="icon-box mb-4">
@@ -273,8 +292,39 @@ export default function OtherSoftware() {
         </div>
       </section>
 
+      {/* ── SCANNING ── */}
+      <section className="py-16 md:py-20 bg-[#f4f7fb] border-y border-[#dce6f0]">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="section-rule mx-auto" />
+            <div className="tag-blue mb-3">Сканирование и файлы</div>
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35]">От бумаги до готового PDF</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {SCAN_FEATURES.map(f => (
+              <div key={f.title} className="card-white rounded-xl p-6">
+                <div className="icon-box mb-4">
+                  <Icon name={f.icon as "Scan"} size={22} style={{ color: "#0e63b0" }} />
+                </div>
+                <h3 className="font-semibold text-[#0d1f35] text-base mb-4">{f.title}</h3>
+                <div className="space-y-2.5">
+                  {f.items.map(i => (
+                    <div key={i} className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0 mt-0.5">
+                        <Icon name="Check" size={9} style={{ color: "#0e63b0" }} />
+                      </div>
+                      <span className="text-xs text-[#5a6e82] leading-relaxed">{i}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── INTERFACE ── */}
-      <section className="py-16 md:py-20 bg-[#f4f7fb]">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
@@ -310,7 +360,7 @@ export default function OtherSoftware() {
       </section>
 
       {/* ── SECURITY ── */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-[#f4f7fb]">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <div className="section-rule mx-auto" />
@@ -319,12 +369,34 @@ export default function OtherSoftware() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {SECURITY.map(s => (
-              <div key={s.title} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6 text-center">
+              <div key={s.title} className="card-white rounded-xl p-6 text-center">
                 <div className="icon-box mx-auto mb-4">
                   <Icon name={s.icon as "HardDrive"} size={22} style={{ color: "#0e63b0" }} />
                 </div>
                 <h3 className="font-semibold text-[#0d1f35] text-sm mb-2">{s.title}</h3>
                 <p className="text-[#5a6e82] text-xs leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MANAGEMENT ── */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="section-rule mx-auto" />
+            <div className="tag-blue mb-3">Управление</div>
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35]">Парк рабочих мест под контролем</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {MANAGEMENT.map(m => (
+              <div key={m.title} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6 text-center">
+                <div className="icon-box mx-auto mb-4">
+                  <Icon name={m.icon as "Users"} size={22} style={{ color: "#0e63b0" }} />
+                </div>
+                <h3 className="font-semibold text-[#0d1f35] text-sm mb-2">{m.title}</h3>
+                <p className="text-[#5a6e82] text-xs leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -402,7 +474,7 @@ export default function OtherSoftware() {
               <div className="gradient-blue-btn text-white rounded-xl p-6 text-center shadow-sm">
                 <Icon name="Percent" size={22} className="mx-auto mb-2" />
                 <div className="font-display text-xl mb-1">Скидка 10 %</div>
-                <div className="text-xs text-white/85"></div>
+                <div className="text-xs text-white/85">До 01.10.2026</div>
               </div>
             </div>
           </div>
@@ -494,7 +566,7 @@ export default function OtherSoftware() {
                   <Icon name="MonitorDown" size={15} />
                   Скачать для Windows
                 </a>
-                <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pdf" className="px-5 py-2.5 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
+                <a href={PRESENTATION_URL} download="ПВ-Система_PDF_Презентация.pptx" className="px-5 py-2.5 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
                   <Icon name="Download" size={15} />
                   Скачать презентацию
                 </a>
