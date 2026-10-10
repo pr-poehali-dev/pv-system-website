@@ -10,6 +10,7 @@ const NAV = [
   { label: "О программе", href: "#about" },
   { label: "Возможности", href: "#modules" },
   { label: "Обучение", href: "#training" },
+  { label: "Стоимость", href: "#pricing" },
   { label: "Контакты", href: "#contacts" },
   { label: "Другое ПО", href: "/other-software", page: true },
 ];
@@ -396,6 +397,75 @@ export default function Index() {
                 <a href="#contacts" className="text-[#0e63b0] font-semibold hover:underline">Контакты</a> или напишите на pvsistema@mail.ru.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRICING ── */}
+      <section id="pricing" className="py-16 md:py-20 bg-[#f4f7fb] border-y border-[#dce6f0]">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="section-rule mx-auto" />
+            <div className="tag-blue mb-3">Стоимость</div>
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35] mb-4">Ценообразование лицензий</h2>
+            <p className="text-[#5a6e82] text-sm leading-relaxed max-w-2xl mx-auto">
+              ПВ-Система включается в Единый реестр российского программного обеспечения. Стоимость лицензии зависит от количества рабочих мест или параметров горного предприятия.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <div className="card-white rounded-xl p-6 flex flex-col">
+              <div className="icon-box mb-4">
+                <Icon name="Monitor" size={22} style={{ color: "#0e63b0" }} />
+              </div>
+              <h3 className="font-semibold text-[#0d1f35] text-base mb-2">Одно рабочее место</h3>
+              <p className="text-[#5a6e82] text-xs leading-relaxed mb-6 flex-1">Лицензионный ключ на один персональный компьютер.</p>
+              <div className="pt-4 border-t border-[#dce6f0]">
+                <div className="font-display text-2xl text-[#0e63b0]">240 000 ₽</div>
+                <div className="text-[11px] text-[#9fb3c8] mt-1">за лицензионный ключ</div>
+              </div>
+            </div>
+
+            <div className="gradient-blue-btn text-white rounded-xl p-6 flex flex-col shadow-md relative">
+              <div className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wide bg-white/20 rounded px-2 py-1">Выгодно</div>
+              <div className="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center mb-4">
+                <Icon name="Users" size={22} className="text-white" />
+              </div>
+              <h3 className="font-semibold text-base mb-2">Базовый пакет</h3>
+              <p className="text-white/85 text-xs leading-relaxed mb-6 flex-1">Пять рабочих мест для отдела или службы предприятия.</p>
+              <div className="pt-4 border-t border-white/25">
+                <div className="font-display text-2xl">1 200 000 ₽</div>
+                <div className="text-[11px] text-white/75 mt-1">за 5 рабочих мест</div>
+              </div>
+            </div>
+
+            <div className="card-white rounded-xl p-6 flex flex-col">
+              <div className="icon-box mb-4">
+                <Icon name="Calculator" size={22} style={{ color: "#0e63b0" }} />
+              </div>
+              <h3 className="font-semibold text-[#0d1f35] text-base mb-2">Индивидуальный расчёт</h3>
+              <p className="text-[#5a6e82] text-xs leading-relaxed mb-6 flex-1">Стоимость рассчитывается исходя из протяжённости сети горных выработок и коэффициента её сложности.</p>
+              <div className="pt-4 border-t border-[#dce6f0]">
+                <a href="#contacts" className="inline-flex items-center gap-2 text-[#0e63b0] text-sm font-semibold hover:gap-3 transition-all">
+                  Запросить расчёт
+                  <Icon name="ArrowRight" size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border border-[#dce6f0] rounded-xl p-5">
+            <div className="flex items-start gap-3">
+              <Icon name="Info" size={18} style={{ color: "#0e63b0" }} className="shrink-0 mt-0.5" />
+              <p className="text-[#0d1f35] text-xs leading-relaxed">
+                Перед покупкой можно познакомиться с программой на сайте{" "}
+                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="text-[#0e63b0] font-semibold hover:underline">пв-система.рф</a>.
+              </p>
+            </div>
+            <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="shrink-0 px-5 py-2.5 gradient-blue-btn text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity flex items-center gap-2">
+              <Icon name="ExternalLink" size={15} />
+              Перейти к программе
+            </a>
           </div>
         </div>
       </section>
