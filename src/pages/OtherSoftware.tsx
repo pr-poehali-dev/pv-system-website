@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
-const APP_SCREENSHOT = "/pv-pdf-screenshot.png";
+const APP_SCREENSHOT = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/92efd125-26ae-4bc2-837b-0a6777d44bff.png";
 const DOWNLOAD_URL = "https://cdn.poehali.dev/projects/bd691282-75ee-481f-a896-7c452858c845/bucket/64744b6d-765a-4712-a28d-1d919085bd3f.exe";
 const PRESENTATION_URL = "/files/PV-Sistema-PDF-Presentation.pptx";
 
