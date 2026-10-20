@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icon";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
-  FEATURES, FORMATS, REQUIREMENTS, QUICK_START, SCENARIOS, FAQ, LICENSE_POINTS, WHATS_NEW, MANUAL_URL, MANUAL_FILE,
+  FEATURES, REQUIREMENTS, QUICK_START, SCENARIOS, FAQ, LICENSE_POINTS, WHATS_NEW, MANUAL_URL, MANUAL_FILE,
 } from "./manualData";
 
 function SectionHead({ tag, title, sub }: { tag: string; title: string; sub?: string }) {
@@ -42,27 +42,9 @@ export function CompatibilitySection() {
   return (
     <section id="requirements" className="py-16 md:py-20 bg-[#f4f7fb] border-y border-[#dce6f0]">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
-        <SectionHead tag="Совместимость и требования" title="Работает с вашими схемами и на вашем железе" />
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
-            <h3 className="font-display text-lg text-[#0d1f35] mb-4">Перенос схем из других программ</h3>
-            <div className="space-y-3">
-              {FORMATS.map(f => (
-                <div key={f.name} className="bg-white border border-[#dce6f0] rounded-xl p-4">
-                  <div className="flex items-center justify-between gap-3 mb-1">
-                    <span className="font-semibold text-[#0d1f35] text-sm">{f.name}</span>
-                    <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded shrink-0">{f.ext}</span>
-                  </div>
-                  <p className="text-[#5a6e82] text-xs leading-relaxed">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-[#5a6e82] text-xs mt-4 leading-relaxed">
-              Экспорт — в PDF, SVG, PNG 300 dpi и Excel; обменные форматы для передачи проекта коллегам.
-            </p>
-          </div>
-
-          <div className="lg:col-span-3">
+        <SectionHead tag="Системные требования" title="Работает на вашем железе" />
+        <div className="max-w-4xl mx-auto">
+          <div>
             <h3 className="font-display text-lg text-[#0d1f35] mb-4">Системные требования</h3>
             <div className="bg-white border border-[#dce6f0] rounded-xl overflow-hidden overflow-x-auto">
               <table className="w-full text-sm min-w-[520px]">
