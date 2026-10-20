@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Icon from "@/components/ui/icon";
+import MineSymbol from "@/components/MineSymbol";
 import { FeaturesSection, CompatibilitySection, QuickStartSection, WhatsNewSection, HelpSection } from "@/components/manual/ManualSections";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
@@ -27,8 +28,7 @@ const MODULES = [
 
 const EMERGENCY = [
   {
-    icon: "Flame",
-    color: "#dc5a1e",
+    symbol: "fire" as const,
     title: "Пожар в горной выработке",
     norm: "Тепловая депрессия по нормативу (ф. 4.5–4.13)",
     desc: "Моделирование вентиляционного режима при пожаре: тепловая депрессия учитывает геометрию выработки, положение очага и время с начала пожара и меняет расход воздуха во всей сети. Продукты горения распространяются по направлению движения воздуха — видно, какие выработки задымятся и когда.",
@@ -43,8 +43,7 @@ const EMERGENCY = [
     ],
   },
   {
-    icon: "Zap",
-    color: "#d99a0b",
+    symbol: "blast" as const,
     title: "Взрыв газа, пыли и ВВ",
     norm: "Методика ВГСЧ · ФНП № 494, пп. 816–822",
     desc: "Взрыв газа и угольной пыли считается по Методике ВГСЧ (прил. 12 к Уставу ВГСЧ), взрыв заряда ВВ — по ФНП № 494. Ударная волна идёт по выработкам сети, а не по прямой, с затуханием на сопряжениях и поворотах; устоявшие перемычки задерживают волну.",
@@ -342,8 +341,8 @@ export default function Index() {
                     className="w-full flex items-center gap-3 p-5 text-left"
                     aria-expanded={isOpen}
                   >
-                    <div className="icon-box !w-11 !h-11">
-                      <Icon name={e.icon} size={20} style={{ color: e.color }} />
+                    <div className="w-11 h-11 rounded-[10px] bg-white border border-[#dce6f0] flex items-center justify-center shrink-0">
+                      <MineSymbol type={e.symbol} size={32} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-[#0d1f35] text-base leading-tight">{e.title}</h3>
