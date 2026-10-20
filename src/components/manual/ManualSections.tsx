@@ -129,6 +129,14 @@ export function QuickStartSection() {
               </ol>
             </div>
           ))}
+          <a href={MANUAL_URL} download={MANUAL_FILE} className="group gradient-blue-btn rounded-xl p-5 text-white flex flex-col justify-center hover:opacity-95 transition-opacity">
+            <Icon name="BookOpen" size={24} />
+            <div className="font-semibold text-sm mt-2">Все сценарии в руководстве</div>
+            <div className="text-xs text-white/85 leading-relaxed mt-1">Подробные шаги с горячими клавишами и советами.</div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold mt-3">
+              Скачать DOCX <Icon name="Download" size={14} className="group-hover:translate-y-0.5 transition-transform" />
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -148,6 +156,14 @@ export function WhatsNewSection() {
               <div className="text-[#5a6e82] text-xs leading-relaxed">{n.desc}</div>
             </div>
           ))}
+          <a href="#contacts" className="group gradient-blue-btn rounded-xl p-5 text-white flex flex-col justify-center hover:opacity-95 transition-opacity">
+            <Icon name="MessageSquarePlus" size={24} />
+            <div className="font-semibold text-sm mt-2">Нужна новая функция?</div>
+            <div className="text-xs text-white/85 leading-relaxed mt-1">Расскажите о своей задаче — учтём в следующих версиях.</div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold mt-3">
+              Написать нам <Icon name="ArrowRight" size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </a>
         </div>
       </div>
     </section>
