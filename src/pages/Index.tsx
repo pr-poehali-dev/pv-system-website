@@ -129,29 +129,29 @@ export default function Index() {
       <header className="sticky top-0 z-50 bg-white border-b border-[#dce6f0] shadow-sm">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="flex items-center gap-3 shrink-0">
               <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg" />
               <div>
                 <div className="font-bold text-[#0d1f35] text-base leading-none">ПВ-Система</div>
-                <div className="text-[10px] text-[#5a6e82] leading-none mt-0.5 tracking-wide">Вентиляция и водоснабжение рудников</div>
+                <div className="text-[10px] text-[#5a6e82] leading-none mt-0.5 tracking-wide whitespace-nowrap">Вентиляция и водоснабжение рудников</div>
               </div>
             </a>
 
-            <nav className="hidden xl:flex items-center gap-1">
+            <nav className="hidden xl:flex items-center gap-0.5 mx-4">
               {NAV.map(l => l.page ? (
                 <Link key={l.href} to={l.href}
-                  className="px-3 py-2 text-sm text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-semibold">
+                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-semibold">
                   {l.label}
                 </Link>
               ) : (
                 <a key={l.href} href={l.href}
-                  className="px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-medium">
+                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-medium">
                   {l.label}
                 </a>
               ))}
             </nav>
 
-            <div className="hidden xl:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-3 shrink-0">
               <a href="#docs" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
                 Скачать
               </a>
