@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Icon from "@/components/ui/icon";
+import { FeaturesSection, CompatibilitySection, QuickStartSection, WhatsNewSection, HelpSection } from "@/components/manual/ManualSections";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/b84c7180-86c1-411c-be61-2bc89b44e202.png";
 const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/files/4b787e51-4a6a-4829-82e3-959df648569e.jpg";
@@ -9,7 +10,9 @@ const IMG_MINE = "https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5f
 const NAV = [
   { label: "О программе", href: "#about" },
   { label: "Возможности", href: "#modules" },
+  { label: "Требования", href: "#requirements" },
   { label: "Обучение", href: "#training" },
+  { label: "Вопросы", href: "#help" },
   { label: "Стоимость", href: "#pricing" },
   { label: "Контакты", href: "#contacts" },
   { label: "Другое ПО", href: "/other-software", page: true },
@@ -75,6 +78,15 @@ const TRAINING_FILES = [
     size: "46 КБ",
     url: "/files/PV-Sistema-Programma-obucheniya-40h.docx",
     file: "ПВ-Система_Программа_обучения_40часов.docx",
+  },
+  {
+    icon: "BookOpen",
+    ext: "DOCX",
+    title: "Руководство пользователя, версия 2.202.639",
+    desc: "Полное описание программы в 24 разделах: интерфейс, импорт, расчёты, аварийные режимы, печать, горячие клавиши, сценарии и ответы на частые вопросы.",
+    size: "73 КБ",
+    url: "/files/PV-Sistema-Rukovodstvo-polzovatelya.docx",
+    file: "ПВ-Система_Руководство_пользователя_v2.202.639.docx",
   },
 ];
 
@@ -316,7 +328,10 @@ export default function Index() {
         </div>
       </section>
 
-
+      <FeaturesSection />
+      <CompatibilitySection />
+      <QuickStartSection />
+      <WhatsNewSection />
 
       {/* ── TRAINING ── */}
       <section id="training" className="py-16 md:py-20 bg-white">
@@ -364,10 +379,10 @@ export default function Index() {
 
           <div className="max-w-4xl mx-auto">
             <h3 className="font-display text-lg text-[#0d1f35] mb-5">Материалы для скачивания</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {TRAINING_FILES.map(f => (
                 <a
-                  key={f.ext}
+                  key={f.url}
                   href={f.url}
                   download={f.file}
                   className="group flex flex-col bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6 hover:border-[#0e63b0] hover:shadow-md transition-all"
@@ -400,6 +415,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <HelpSection />
 
       {/* ── PRICING ── */}
       <section id="pricing" className="py-16 md:py-20 bg-[#f4f7fb] border-y border-[#dce6f0]">
