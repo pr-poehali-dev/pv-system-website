@@ -152,9 +152,6 @@ export default function Index() {
             </nav>
 
             <div className="hidden xl:flex items-center gap-3 shrink-0">
-              <a href="#docs" className="px-4 py-2 text-sm border border-[#0e63b0] text-[#0e63b0] hover:bg-[#f0f7ff] rounded font-semibold transition-colors">
-                Скачать
-              </a>
               <a href="#contacts" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
                 Связаться
               </a>
