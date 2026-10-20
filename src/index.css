@@ -245,3 +245,58 @@
     letter-spacing: 0.06em;
   }
 }
+
+@layer utilities {
+  .btn-amber {
+    background: #f5a524;
+    color: #1f2328;
+    transition: background-color 0.2s ease;
+  }
+  .btn-amber:hover {
+    background: #ffb83d;
+  }
+  .card-graphite {
+    background: linear-gradient(160deg, #2b3036 0%, #1f2328 100%);
+    border: 1px solid #3a4048;
+  }
+  .hero-pro {
+    background: linear-gradient(180deg, #23272d 0%, #1b1f24 100%);
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .theme-pro .font-display {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .theme-pro .section-rule {
+    background: #f5a524;
+  }
+  .theme-pro .tag-blue {
+    color: #a16207;
+    font-weight: 600;
+  }
+  .theme-pro .icon-box {
+    background: #f1efea;
+    border-color: #e3e1dc;
+  }
+  .theme-pro .card-white {
+    border-color: #e3e1dc;
+    box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
+  }
+  .theme-pro .card-white:hover {
+    border-color: #f5a524;
+    box-shadow: 0 8px 24px rgba(31, 35, 40, 0.08);
+  }
+  .theme-pro section.bg-\[\#f6f5f2\] {
+    background-color: #f6f5f2;
+    background-image:
+      linear-gradient(rgba(31, 35, 40, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 35, 40, 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

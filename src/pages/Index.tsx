@@ -155,91 +155,90 @@ export default function Index() {
     }
   };
 
-  const inp = "w-full bg-white border border-[#dce6f0] rounded px-3 py-2.5 text-sm text-[#0d1f35] placeholder:text-[#9fb3c8] focus:outline-none focus:border-[#0e63b0] focus:ring-2 focus:ring-[rgba(14,99,176,0.1)] transition-all";
+  const inp = "w-full bg-white border border-[#e3e1dc] rounded px-3 py-2.5 text-sm text-[#1f2328] placeholder:text-[#9a9fa6] focus:outline-none focus:border-[#a16207] focus:ring-2 focus:ring-[rgba(245,165,36,0.2)] transition-all";
 
   return (
-    <div className="min-h-screen bg-white text-[#0d1f35]">
+    <div className="theme-pro min-h-screen bg-white text-[#1f2328]">
 
       {/* ── HEADER ── */}
-      <header className="sticky top-0 z-50 bg-white border-b border-[#dce6f0] shadow-sm">
+      <header className="sticky top-0 z-50 bg-[#1f2328] border-b-2 border-[#f5a524] shadow-sm">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             <a href="#" className="flex items-center gap-3 shrink-0">
               <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg" />
               <div>
-                <div className="font-bold text-[#0d1f35] text-base leading-none">ПВ-Система</div>
-                <div className="text-[10px] text-[#5a6e82] leading-none mt-0.5 tracking-wide whitespace-nowrap">Вентиляция и водоснабжение рудников</div>
+                <div className="font-bold text-white text-base leading-none">ПВ-Система</div>
+                <div className="text-[10px] text-[#a7adb5] leading-none mt-0.5 tracking-wide whitespace-nowrap">Вентиляция и водоснабжение рудников</div>
               </div>
             </a>
 
             <nav className="hidden xl:flex items-center gap-0.5 mx-4">
               {NAV.map(l => l.page ? (
                 <Link key={l.href} to={l.href}
-                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-semibold">
+                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#f5a524] hover:bg-white/10 rounded transition-all font-semibold">
                   {l.label}
                 </Link>
               ) : (
                 <a key={l.href} href={l.href}
-                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all font-medium">
+                  className="px-2.5 py-2 text-[13px] 2xl:text-sm whitespace-nowrap text-[#d4d8dd] hover:text-white hover:bg-white/10 rounded transition-all font-medium">
                   {l.label}
                 </a>
               ))}
             </nav>
 
             <div className="hidden xl:flex items-center gap-3 shrink-0">
-              <a href="#contacts" className="px-4 py-2 text-sm gradient-blue-btn text-white rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
+              <a href="#contacts" className="px-4 py-2 text-sm btn-amber rounded font-semibold hover:opacity-90 transition-opacity shadow-sm">
                 Связаться
               </a>
             </div>
 
-            <button className="xl:hidden text-[#5a6e82]" onClick={() => setMenuOpen(!menuOpen)}>
+            <button className="xl:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
               <Icon name={menuOpen ? "X" : "Menu"} size={24} />
             </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className="xl:hidden border-t border-[#dce6f0] bg-white py-4 px-6 space-y-1">
+          <div className="xl:hidden border-t border-white/10 bg-[#1f2328] py-4 px-6 space-y-1">
             {NAV.map(l => l.page ? (
               <Link key={l.href} to={l.href} onClick={() => setMenuOpen(false)}
-                className="block px-3 py-2 text-sm text-[#0e63b0] font-semibold hover:bg-[#f0f7ff] rounded transition-all">{l.label}</Link>
+                className="block px-3 py-2 text-sm text-[#f5a524] font-semibold hover:bg-white/10 rounded transition-all">{l.label}</Link>
             ) : (
               <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
-                className="block px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all">{l.label}</a>
+                className="block px-3 py-2 text-sm text-[#d4d8dd] hover:text-white hover:bg-white/10 rounded transition-all">{l.label}</a>
             ))}
-            <div className="pt-3 flex flex-col gap-2 border-t border-[#dce6f0] mt-2">
-              <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Демо-версия</a>
-              <a href="#contacts" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Связаться</a>
+            <div className="pt-3 flex flex-col gap-2 border-t border-white/10 mt-2">
+              <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="px-4 py-2 text-sm text-center border border-white/30 text-white rounded font-semibold">Демо-версия</a>
+              <a href="#contacts" className="px-4 py-2 text-sm text-center btn-amber rounded font-semibold">Связаться</a>
             </div>
           </div>
         )}
       </header>
 
       {/* ── HERO ── */}
-      <section className="gradient-hero text-white py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.3) 0%, transparent 50%)" }} />
-        <div className="absolute bottom-0 left-0 right-0 h-16"
-          style={{ background: "linear-gradient(to top, white, transparent)" }} />
+      <section className="hero-pro text-white py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid" />
+        <div className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse at 70% 45%, rgba(245,165,36,0.16) 0%, transparent 55%), radial-gradient(ellipse at 50% 120%, rgba(41,128,185,0.25) 0%, transparent 60%)" }} />
 
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="font-display leading-tight mb-4 md:mb-5 anim-0" style={{ letterSpacing: "0.01em" }}>
-                <span className="text-[clamp(1rem,2.5vw,1.75rem)] font-semibold text-[#bfdbfe]">Программный комплекс</span><br />
-                <span className="text-[clamp(2.2rem,6vw,3.5rem)] text-[#7dd3fc]">ПВ-Система</span>
+                <span className="text-[clamp(0.8rem,1.6vw,1rem)] font-mono-brand uppercase tracking-[0.2em] text-[#a7adb5]">Программный комплекс</span><br />
+                <span className="text-[clamp(2.4rem,6vw,4rem)] text-white">ПВ<span className="text-[#f5a524]">-</span>Система</span>
               </h1>
 
-              <p className="text-[#bfdbfe] text-base md:text-lg leading-relaxed mb-7 md:mb-8 max-w-lg mx-auto lg:mx-0 anim-1">
+              <p className="text-[#c9ced4] text-base md:text-lg leading-relaxed mb-7 md:mb-8 max-w-lg mx-auto lg:mx-0 anim-1">
                 Проектирование вентиляции и водоснабжения для горно-рудных предприятий.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 anim-2">
-                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-[#0e63b0] font-semibold rounded hover:bg-[#f0f7ff] transition-colors shadow-md flex items-center justify-center gap-2">
+                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 btn-amber font-semibold rounded shadow-md flex items-center justify-center gap-2">
                   <Icon name="Play" size={16} />
                   Попробовать
                 </a>
-                <a href="#contacts" className="px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                <a href="#contacts" className="px-6 py-3 border border-white/30 text-white font-semibold rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                   <Icon name="Mail" size={16} />
                   Связаться
                 </a>
@@ -250,16 +249,16 @@ export default function Index() {
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-2xl">
                 <img src={IMG_MINE} alt="ПВ-Система в работе" className="w-full aspect-[4/3] object-cover opacity-80" />
               </div>
-              <div className="absolute bottom-0 right-0 bg-white rounded-xl p-4 border border-[#dce6f0] shadow-lg min-w-[150px]">
+              <div className="absolute bottom-0 right-0 bg-white rounded-xl p-4 border border-[#e3e1dc] shadow-lg min-w-[150px]">
                 <div className="flex items-center gap-2">
                   <div className="flex flex-col gap-[3px]">
-                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #dce6f0" }} />
+                    <div className="w-7 h-[5px] rounded-sm" style={{ background: "#ffffff", border: "1px solid #e3e1dc" }} />
                     <div className="w-7 h-[5px] rounded-sm" style={{ background: "#0039A6" }} />
                     <div className="w-7 h-[5px] rounded-sm" style={{ background: "#D52B1E" }} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-[#0d1f35] leading-tight">Сделано в России</div>
-                    <div className="text-[10px] text-[#5a6e82]">Российское ПО</div>
+                    <div className="text-xs font-bold text-[#1f2328] leading-tight">Сделано в России</div>
+                    <div className="text-[10px] text-[#5f6670]">Российское ПО</div>
                   </div>
                 </div>
               </div>
@@ -277,12 +276,12 @@ export default function Index() {
             <div>
               <div className="section-rule" />
               <div className="tag-blue mb-3">О программном комплексе</div>
-              <p className="text-[#5a6e82] leading-relaxed mb-5">
+              <p className="text-[#5f6670] leading-relaxed mb-5">
                 ПВ-Система — специализированный программный комплекс для проектирования вентиляции и водоснабжения горно-рудных предприятий и решения задач противоаварийной устойчивости.
               </p>
 
               <div className="mb-5">
-                <div className="text-sm font-semibold text-[#0d1f35] mb-2">Вентиляционные задачи:</div>
+                <div className="text-sm font-semibold text-[#1f2328] mb-2">Вентиляционные задачи:</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {[
                     "Расчёт воздухораспределения",
@@ -291,17 +290,17 @@ export default function Index() {
                     "Расчёт баланса воздуха",
                   ].map(t => (
                     <div key={t} className="flex items-center gap-2.5">
-                      <div className="w-5 h-5 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0">
-                        <Icon name="Check" size={11} style={{ color: "#0e63b0" }} />
+                      <div className="w-5 h-5 rounded-full bg-[#fdf3dc] border border-[#f1d9a6] flex items-center justify-center shrink-0">
+                        <Icon name="Check" size={11} style={{ color: "#a16207" }} />
                       </div>
-                      <span className="text-sm text-[#0d1f35]">{t}</span>
+                      <span className="text-sm text-[#1f2328]">{t}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mb-8">
-                <div className="text-sm font-semibold text-[#0d1f35] mb-2">Задачи плана ликвидации аварии (ПЛА):</div>
+                <div className="text-sm font-semibold text-[#1f2328] mb-2">Задачи плана ликвидации аварии (ПЛА):</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {[
                     "Движение горноспасателей при разведке и ликвидации аварии",
@@ -309,17 +308,17 @@ export default function Index() {
                     "Расчёт распространения дыма в горных выработках",
                   ].map(t => (
                     <div key={t} className="flex items-center gap-2.5">
-                      <div className="w-5 h-5 rounded-full bg-[#e8f4fd] border border-[#bee3f8] flex items-center justify-center shrink-0">
-                        <Icon name="Check" size={11} style={{ color: "#0e63b0" }} />
+                      <div className="w-5 h-5 rounded-full bg-[#fdf3dc] border border-[#f1d9a6] flex items-center justify-center shrink-0">
+                        <Icon name="Check" size={11} style={{ color: "#a16207" }} />
                       </div>
-                      <span className="text-sm text-[#0d1f35]">{t}</span>
+                      <span className="text-sm text-[#1f2328]">{t}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
             </div>
-            <div className="relative rounded-xl border border-[#dce6f0] shadow-md overflow-hidden bg-[#25292e]">
+            <div className="relative rounded-xl border border-[#e3e1dc] shadow-md overflow-hidden bg-[#25292e]">
               <img
                 src="https://cdn.poehali.dev/projects/70a8d357-1c4f-4d1c-9bc4-9ce5ff1444a9/bucket/62f72536-ce04-4d09-a361-f28b63fe155c.png"
                 alt="Интерфейс программы ПВ-Система"
@@ -329,39 +328,39 @@ export default function Index() {
           </div>
 
           <div className="mt-12">
-            <div className="text-sm font-semibold text-[#0d1f35] mb-4">Расчёт аварийных режимов:</div>
+            <div className="text-sm font-semibold text-[#1f2328] mb-4">Расчёт аварийных режимов:</div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
               {EMERGENCY.map(e => {
                 const isOpen = openEmergency.includes(e.title);
                 return (
-                <div key={e.title} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl hover:border-[#0e63b0] transition-colors">
+                <div key={e.title} className="bg-[#f6f5f2] border border-[#e3e1dc] rounded-xl hover:border-[#a16207] transition-colors">
                   <button
                     type="button"
                     onClick={() => setOpenEmergency(p => isOpen ? p.filter(t => t !== e.title) : [...p, e.title])}
                     className="w-full flex items-center gap-3 p-5 text-left"
                     aria-expanded={isOpen}
                   >
-                    <div className="w-11 h-11 rounded-[10px] bg-white border border-[#dce6f0] flex items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-[10px] bg-white border border-[#e3e1dc] flex items-center justify-center shrink-0">
                       <MineSymbol type={e.symbol} size={32} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-[#0d1f35] text-base leading-tight">{e.title}</h3>
-                      <div className="text-[11px] text-[#0e63b0] font-mono mt-0.5">{e.norm}</div>
+                      <h3 className="font-semibold text-[#1f2328] text-base leading-tight">{e.title}</h3>
+                      <div className="text-[11px] text-[#a16207] font-mono mt-0.5">{e.norm}</div>
                     </div>
-                    <span className="hidden sm:inline text-xs font-semibold text-[#0e63b0] shrink-0">{isOpen ? "Свернуть" : "Подробнее"}</span>
-                    <Icon name="ChevronDown" size={20} className={`text-[#0e63b0] shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                    <span className="hidden sm:inline text-xs font-semibold text-[#a16207] shrink-0">{isOpen ? "Свернуть" : "Подробнее"}</span>
+                    <Icon name="ChevronDown" size={20} className={`text-[#a16207] shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                   </button>
                   {isOpen && (
-                  <div className="mx-5 pb-6 border-t border-[#dce6f0]">
-                  <p className="mt-4 text-[#5a6e82] text-sm leading-relaxed mb-4">{e.desc}</p>
-                  <div className="text-xs font-semibold text-[#0d1f35] mb-2">Исходные данные</div>
-                  <p className="text-[#5a6e82] text-xs leading-relaxed mb-4">{e.input}</p>
-                  <div className="text-xs font-semibold text-[#0d1f35] mb-2">Результаты</div>
+                  <div className="mx-5 pb-6 border-t border-[#e3e1dc]">
+                  <p className="mt-4 text-[#5f6670] text-sm leading-relaxed mb-4">{e.desc}</p>
+                  <div className="text-xs font-semibold text-[#1f2328] mb-2">Исходные данные</div>
+                  <p className="text-[#5f6670] text-xs leading-relaxed mb-4">{e.input}</p>
+                  <div className="text-xs font-semibold text-[#1f2328] mb-2">Результаты</div>
                   <div className="space-y-1.5">
                     {e.results.map(r => (
                       <div key={r} className="flex items-start gap-2">
-                        <Icon name="Check" size={14} style={{ color: "#0e63b0" }} className="shrink-0 mt-0.5" />
-                        <span className="text-xs text-[#0d1f35] leading-relaxed">{r}</span>
+                        <Icon name="Check" size={14} style={{ color: "#a16207" }} className="shrink-0 mt-0.5" />
+                        <span className="text-xs text-[#1f2328] leading-relaxed">{r}</span>
                       </div>
                     ))}
                   </div>
@@ -371,21 +370,21 @@ export default function Index() {
                 );
               })}
             </div>
-            <p className="text-[#9fb3c8] text-xs mt-4">Аварийные расчёты доступны в полной версии программы.</p>
+            <p className="text-[#9a9fa6] text-xs mt-4">Аварийные расчёты доступны в полной версии программы.</p>
           </div>
         </div>
       </section>
 
       {/* ── MODULES ── */}
-      <section id="modules" className="py-16 md:py-20 bg-[#f4f7fb]">
+      <section id="modules" className="py-16 md:py-20 bg-[#f6f5f2]">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <div className="section-rule mx-auto" />
             <div className="tag-blue mb-3">Возможности системы</div>
-            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
+            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#1f2328]">
               Полный цикл инженерных расчётов
             </h2>
-            <p className="text-[#5a6e82] mt-3 max-w-xl mx-auto">
+            <p className="text-[#5f6670] mt-3 max-w-xl mx-auto">
               задач вентиляции и водоснабжения горно-рудных предприятий
             </p>
           </div>
@@ -394,12 +393,12 @@ export default function Index() {
               <div key={m.code} className="card-white rounded-xl p-5 cursor-default">
                 <div className="flex items-start justify-between mb-4">
                   <div className="icon-box">
-                    <Icon name={m.icon as "Wind"} size={22} style={{ color: "#0e63b0" }} />
+                    <Icon name={m.icon as "Wind"} size={22} style={{ color: "#a16207" }} />
                   </div>
-                  {m.code && <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded">{m.code}</span>}
+                  {m.code && <span className="text-[10px] font-mono font-semibold text-[#a16207] bg-[#fdf3dc] border border-[#f1d9a6] px-2 py-0.5 rounded">{m.code}</span>}
                 </div>
-                <h3 className="font-semibold text-[#0d1f35] text-sm mb-2 leading-snug">{m.title}</h3>
-                <p className="text-[#5a6e82] text-xs leading-relaxed">{m.desc}</p>
+                <h3 className="font-semibold text-[#1f2328] text-sm mb-2 leading-snug">{m.title}</h3>
+                <p className="text-[#5f6670] text-xs leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -417,38 +416,38 @@ export default function Index() {
           <div className="text-center mb-12">
             <div className="section-rule mx-auto" />
             <div className="tag-blue mb-3">Обучение пользователей</div>
-            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35]">
+            <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#1f2328]">
               Курс подготовки на 40 академических часов
             </h2>
-            <p className="text-[#5a6e82] mt-3 max-w-2xl mx-auto">
+            <p className="text-[#5f6670] mt-3 max-w-2xl mx-auto">
               Практический курс для горных инженеров, специалистов службы аэрологической безопасности и вентиляции и ВГСЧ. От построения схемы рудника до расчёта аварийных режимов и подготовки документов ПЛА.
             </p>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-5xl mx-auto">
             {TRAINING_FACTS.map(f => (
-              <div key={f.label} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-5 text-center">
+              <div key={f.label} className="bg-[#f6f5f2] border border-[#e3e1dc] rounded-xl p-5 text-center">
                 <div className="icon-box mx-auto mb-3">
-                  <Icon name={f.icon as "Clock"} size={20} style={{ color: "#0e63b0" }} />
+                  <Icon name={f.icon as "Clock"} size={20} style={{ color: "#a16207" }} />
                 </div>
-                <div className="font-semibold text-[#0d1f35] text-sm mb-1">{f.label}</div>
-                <div className="text-[#5a6e82] text-xs leading-relaxed">{f.sub}</div>
+                <div className="font-semibold text-[#1f2328] text-sm mb-1">{f.label}</div>
+                <div className="text-[#5f6670] text-xs leading-relaxed">{f.sub}</div>
               </div>
             ))}
           </div>
 
           <div className="max-w-4xl mx-auto mb-12">
-            <h3 className="font-display text-lg text-[#0d1f35] mb-5">Программа по дням</h3>
+            <h3 className="font-display text-lg text-[#1f2328] mb-5">Программа по дням</h3>
             <div className="space-y-3">
               {TRAINING_DAYS.map(d => (
-                <div key={d.day} className="flex gap-4 bg-white border border-[#dce6f0] rounded-xl p-5 hover:border-[#0e63b0] transition-colors">
+                <div key={d.day} className="flex gap-4 bg-white border border-[#e3e1dc] rounded-xl p-5 hover:border-[#a16207] transition-colors">
                   <div className="shrink-0 w-16 text-center">
-                    <div className="text-[#0e63b0] font-display text-sm font-semibold">{d.day}</div>
-                    <div className="text-[10px] text-[#9fb3c8] mt-0.5">8 ч</div>
+                    <div className="text-[#a16207] font-display text-sm font-semibold">{d.day}</div>
+                    <div className="text-[10px] text-[#9a9fa6] mt-0.5">8 ч</div>
                   </div>
-                  <div className="border-l border-[#dce6f0] pl-4">
-                    <div className="font-semibold text-[#0d1f35] text-sm mb-1.5 leading-snug">{d.title}</div>
-                    <div className="text-[#5a6e82] text-xs leading-relaxed">{d.desc}</div>
+                  <div className="border-l border-[#e3e1dc] pl-4">
+                    <div className="font-semibold text-[#1f2328] text-sm mb-1.5 leading-snug">{d.title}</div>
+                    <div className="text-[#5f6670] text-xs leading-relaxed">{d.desc}</div>
                   </div>
                 </div>
               ))}
@@ -456,26 +455,26 @@ export default function Index() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <h3 className="font-display text-lg text-[#0d1f35] mb-5">Материалы для скачивания</h3>
+            <h3 className="font-display text-lg text-[#1f2328] mb-5">Материалы для скачивания</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {TRAINING_FILES.map(f => (
                 <a
                   key={f.url}
                   href={f.url}
                   download={f.file}
-                  className="group flex flex-col bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6 hover:border-[#0e63b0] hover:shadow-md transition-all"
+                  className="group flex flex-col bg-[#f6f5f2] border border-[#e3e1dc] rounded-xl p-6 hover:border-[#a16207] hover:shadow-md transition-all"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="icon-box">
-                      <Icon name={f.icon as "FileText"} size={22} style={{ color: "#0e63b0" }} />
+                      <Icon name={f.icon as "FileText"} size={22} style={{ color: "#a16207" }} />
                     </div>
-                    <span className="text-[10px] font-mono font-semibold text-[#0e63b0] bg-[#e8f4fd] border border-[#bee3f8] px-2 py-0.5 rounded">{f.ext}</span>
+                    <span className="text-[10px] font-mono font-semibold text-[#a16207] bg-[#fdf3dc] border border-[#f1d9a6] px-2 py-0.5 rounded">{f.ext}</span>
                   </div>
-                  <h4 className="font-semibold text-[#0d1f35] text-sm mb-2 leading-snug">{f.title}</h4>
-                  <p className="text-[#5a6e82] text-xs leading-relaxed mb-5 flex-1">{f.desc}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-[#dce6f0]">
-                    <span className="text-[11px] text-[#9fb3c8]">{f.size}</span>
-                    <span className="inline-flex items-center gap-1.5 text-[#0e63b0] text-xs font-semibold group-hover:gap-2.5 transition-all">
+                  <h4 className="font-semibold text-[#1f2328] text-sm mb-2 leading-snug">{f.title}</h4>
+                  <p className="text-[#5f6670] text-xs leading-relaxed mb-5 flex-1">{f.desc}</p>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#e3e1dc]">
+                    <span className="text-[11px] text-[#9a9fa6]">{f.size}</span>
+                    <span className="inline-flex items-center gap-1.5 text-[#a16207] text-xs font-semibold group-hover:gap-2.5 transition-all">
                       Скачать
                       <Icon name="Download" size={14} />
                     </span>
@@ -483,11 +482,11 @@ export default function Index() {
                 </a>
               ))}
             </div>
-            <div className="mt-6 flex items-start gap-3 bg-[#e8f4fd] border border-[#bee3f8] rounded-xl p-5">
-              <Icon name="Info" size={18} style={{ color: "#0e63b0" }} className="shrink-0 mt-0.5" />
-              <p className="text-[#0d1f35] text-xs leading-relaxed">
+            <div className="mt-6 flex items-start gap-3 bg-[#fdf3dc] border border-[#f1d9a6] rounded-xl p-5">
+              <Icon name="Info" size={18} style={{ color: "#a16207" }} className="shrink-0 mt-0.5" />
+              <p className="text-[#1f2328] text-xs leading-relaxed">
                 Обучение проводится на площадке заказчика или дистанционно. Для записи группы и согласования дат оставьте заявку в разделе{" "}
-                <a href="#contacts" className="text-[#0e63b0] font-semibold hover:underline">Контакты</a> или напишите на pvsistema@mail.ru.
+                <a href="#contacts" className="text-[#a16207] font-semibold hover:underline">Контакты</a> или напишите на pvsistema@mail.ru.
               </p>
             </div>
           </div>
@@ -497,13 +496,13 @@ export default function Index() {
       <HelpSection />
 
       {/* ── PRICING ── */}
-      <section id="pricing" className="py-16 md:py-20 bg-[#f4f7fb] border-y border-[#dce6f0]">
+      <section id="pricing" className="py-16 md:py-20 bg-[#f6f5f2] border-y border-[#e3e1dc]">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <div className="section-rule mx-auto" />
             <div className="tag-blue mb-3">Стоимость</div>
-            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#0d1f35] mb-4">Ценообразование лицензий</h2>
-            <p className="text-[#5a6e82] text-sm leading-relaxed max-w-2xl mx-auto">
+            <h2 className="font-display text-[clamp(1.6rem,3vw,2.4rem)] text-[#1f2328] mb-4">Ценообразование лицензий</h2>
+            <p className="text-[#5f6670] text-sm leading-relaxed max-w-2xl mx-auto">
               ПВ-Система включается в Единый реестр российского программного обеспечения. Стоимость лицензии зависит от количества рабочих мест или параметров горного предприятия.
             </p>
           </div>
@@ -511,17 +510,17 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
             <div className="card-white rounded-xl p-6 flex flex-col">
               <div className="icon-box mb-4">
-                <Icon name="Monitor" size={22} style={{ color: "#0e63b0" }} />
+                <Icon name="Monitor" size={22} style={{ color: "#a16207" }} />
               </div>
-              <h3 className="font-semibold text-[#0d1f35] text-base mb-2">Одно рабочее место</h3>
-              <p className="text-[#5a6e82] text-xs leading-relaxed mb-6 flex-1">Лицензионный ключ на один персональный компьютер.</p>
-              <div className="pt-4 border-t border-[#dce6f0]">
-                <div className="font-display text-2xl text-[#0e63b0]">240 000 ₽</div>
-                <div className="text-[11px] text-[#9fb3c8] mt-1">за лицензионный ключ</div>
+              <h3 className="font-semibold text-[#1f2328] text-base mb-2">Одно рабочее место</h3>
+              <p className="text-[#5f6670] text-xs leading-relaxed mb-6 flex-1">Лицензионный ключ на один персональный компьютер.</p>
+              <div className="pt-4 border-t border-[#e3e1dc]">
+                <div className="font-display text-2xl text-[#a16207]">240 000 ₽</div>
+                <div className="text-[11px] text-[#9a9fa6] mt-1">за лицензионный ключ</div>
               </div>
             </div>
 
-            <div className="gradient-blue-btn text-white rounded-xl p-6 flex flex-col shadow-md relative">
+            <div className="card-graphite text-white rounded-xl p-6 flex flex-col shadow-md relative">
               <div className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wide bg-white/20 rounded px-2 py-1">Выгодно</div>
               <div className="w-12 h-12 rounded-lg bg-white/15 flex items-center justify-center mb-4">
                 <Icon name="Users" size={22} className="text-white" />
@@ -536,12 +535,12 @@ export default function Index() {
 
             <div className="card-white rounded-xl p-6 flex flex-col">
               <div className="icon-box mb-4">
-                <Icon name="Calculator" size={22} style={{ color: "#0e63b0" }} />
+                <Icon name="Calculator" size={22} style={{ color: "#a16207" }} />
               </div>
-              <h3 className="font-semibold text-[#0d1f35] text-base mb-2">Индивидуальный расчёт</h3>
-              <p className="text-[#5a6e82] text-xs leading-relaxed mb-6 flex-1">Стоимость рассчитывается исходя из протяжённости сети горных выработок и коэффициента её сложности.</p>
-              <div className="pt-4 border-t border-[#dce6f0]">
-                <a href="#contacts" className="inline-flex items-center gap-2 text-[#0e63b0] text-sm font-semibold hover:gap-3 transition-all">
+              <h3 className="font-semibold text-[#1f2328] text-base mb-2">Индивидуальный расчёт</h3>
+              <p className="text-[#5f6670] text-xs leading-relaxed mb-6 flex-1">Стоимость рассчитывается исходя из протяжённости сети горных выработок и коэффициента её сложности.</p>
+              <div className="pt-4 border-t border-[#e3e1dc]">
+                <a href="#contacts" className="inline-flex items-center gap-2 text-[#a16207] text-sm font-semibold hover:gap-3 transition-all">
                   Запросить расчёт
                   <Icon name="ArrowRight" size={16} />
                 </a>
@@ -549,15 +548,15 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="mt-8 max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border border-[#dce6f0] rounded-xl p-5">
+          <div className="mt-8 max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border border-[#e3e1dc] rounded-xl p-5">
             <div className="flex items-start gap-3">
-              <Icon name="Info" size={18} style={{ color: "#0e63b0" }} className="shrink-0 mt-0.5" />
-              <p className="text-[#0d1f35] text-xs leading-relaxed">
+              <Icon name="Info" size={18} style={{ color: "#a16207" }} className="shrink-0 mt-0.5" />
+              <p className="text-[#1f2328] text-xs leading-relaxed">
                 Перед покупкой можно познакомиться с программой на сайте{" "}
-                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="text-[#0e63b0] font-semibold hover:underline">пв-система.рф</a>.
+                <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="text-[#a16207] font-semibold hover:underline">пв-система.рф</a>.
               </p>
             </div>
-            <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="shrink-0 px-5 py-2.5 gradient-blue-btn text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity flex items-center gap-2">
+            <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" className="shrink-0 px-5 py-2.5 btn-amber text-sm font-semibold rounded hover:opacity-90 transition-opacity flex items-center gap-2">
               <Icon name="ExternalLink" size={15} />
               Перейти к программе
             </a>
@@ -572,7 +571,7 @@ export default function Index() {
             <div>
               <div className="section-rule" />
               <div className="tag-blue mb-3">Контакты</div>
-              <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#0d1f35] mb-6 leading-tight">
+              <h2 className="font-display text-[clamp(1.7rem,3vw,2.5rem)] text-[#1f2328] mb-6 leading-tight">
                 Свяжитесь с нами
               </h2>
 
@@ -587,51 +586,51 @@ export default function Index() {
                 ].map(c => (
                   <div key={c.label} className="flex items-start gap-3">
                     <div className="icon-box shrink-0 mt-0.5">
-                      <Icon name={c.icon as "MapPin"} size={16} style={{ color: "#0e63b0" }} />
+                      <Icon name={c.icon as "MapPin"} size={16} style={{ color: "#a16207" }} />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#5a6e82] uppercase tracking-wide">{c.label}</div>
-                      <div className="text-sm font-medium text-[#0d1f35] mt-0.5">{c.val}</div>
+                      <div className="text-xs font-semibold text-[#5f6670] uppercase tracking-wide">{c.label}</div>
+                      <div className="text-sm font-medium text-[#1f2328] mt-0.5">{c.val}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-[#dce6f0] shadow-sm p-8">
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-[#dce6f0]">
+            <div className="bg-white rounded-xl border border-[#e3e1dc] shadow-sm p-8">
+              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-[#e3e1dc]">
                 <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain rounded-lg" />
                 <div>
-                  <div className="font-bold text-[#0d1f35]">Заказать</div>
-                  <div className="text-xs text-[#5a6e82]">Ответим в течение рабочего дня</div>
+                  <div className="font-bold text-[#1f2328]">Заказать</div>
+                  <div className="text-xs text-[#5f6670]">Ответим в течение рабочего дня</div>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Имя</label>
+                    <label className="block text-xs font-semibold text-[#5f6670] uppercase tracking-wide mb-1.5">Имя</label>
                     <input type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Иван Петров" className={inp} />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Предприятие</label>
+                    <label className="block text-xs font-semibold text-[#5f6670] uppercase tracking-wide mb-1.5">Предприятие</label>
                     <input type="text" value={form.org} onChange={e => setForm({ ...form, org: e.target.value })} placeholder="ОАО «Рудник»" className={inp} />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Email</label>
+                  <label className="block text-xs font-semibold text-[#5f6670] uppercase tracking-wide mb-1.5">Email</label>
                   <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="ivan@mine.ru" className={inp} />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Телефон</label>
+                  <label className="block text-xs font-semibold text-[#5f6670] uppercase tracking-wide mb-1.5">Телефон</label>
                   <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="+7 (___) ___-__-__" className={inp} />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#5a6e82] uppercase tracking-wide mb-1.5">Тип предприятия / задача</label>
+                  <label className="block text-xs font-semibold text-[#5f6670] uppercase tracking-wide mb-1.5">Тип предприятия / задача</label>
                   <textarea value={form.msg} onChange={e => setForm({ ...form, msg: e.target.value })}
                     placeholder="Горно-рудное предприятие, нужен расчёт вентиляционной сети и ПЛА для ВГСЧ"
                     rows={4} className={`${inp} resize-none`} />
                 </div>
-                <button onClick={submitOrder} disabled={sending} className="w-full py-3 gradient-blue-btn text-white font-semibold rounded hover:opacity-90 transition-opacity shadow-sm disabled:opacity-60 disabled:cursor-not-allowed">
+                <button onClick={submitOrder} disabled={sending} className="w-full py-3 btn-amber font-semibold rounded hover:opacity-90 transition-opacity shadow-sm disabled:opacity-60 disabled:cursor-not-allowed">
                   {sending ? "Отправляем..." : "Отправить заявку"}
                 </button>
                 {status === "ok" && (
@@ -640,7 +639,7 @@ export default function Index() {
                 {status === "err" && (
                   <p className="text-sm text-red-600 text-center font-medium">Не удалось отправить. Укажите имя и контакт (email или телефон) и попробуйте ещё раз.</p>
                 )}
-                <p className="text-xs text-[#9fb3c8] text-center">
+                <p className="text-xs text-[#9a9fa6] text-center">
                   Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных
                 </p>
               </div>
@@ -650,7 +649,7 @@ export default function Index() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#0d1f35] text-white py-12">
+      <footer className="bg-[#1f2328] text-white py-12">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
@@ -658,26 +657,26 @@ export default function Index() {
                 <img src={LOGO_URL} alt="ПВ-Система" className="h-10 w-10 object-contain" />
                 <div>
                   <div className="font-bold text-white">ПВ-Система</div>
-                  <div className="text-xs text-[#93c5fd]">Вентиляция и водоснабжение рудников</div>
+                  <div className="text-xs text-[#f5a524]">Вентиляция и водоснабжение рудников</div>
                 </div>
               </div>
-              <p className="text-sm text-[#94a3b8] leading-relaxed max-w-xs">
+              <p className="text-sm text-[#a7adb5] leading-relaxed max-w-xs">
                 Специализированный программный комплекс для проектирования вентиляции и водоснабжения горно-рудных предприятий и решения задач противоаварийной устойчивости.
               </p>
             </div>
             <div>
-              <div className="text-xs font-semibold text-[#93c5fd] uppercase tracking-wide mb-4">Разделы</div>
+              <div className="text-xs font-semibold text-[#f5a524] uppercase tracking-wide mb-4">Разделы</div>
               <div className="space-y-2">
                 {NAV.map(l => l.page ? (
-                  <Link key={l.href} to={l.href} className="block text-sm text-[#94a3b8] hover:text-white transition-colors">{l.label}</Link>
+                  <Link key={l.href} to={l.href} className="block text-sm text-[#a7adb5] hover:text-white transition-colors">{l.label}</Link>
                 ) : (
-                  <a key={l.href} href={l.href} className="block text-sm text-[#94a3b8] hover:text-white transition-colors">{l.label}</a>
+                  <a key={l.href} href={l.href} className="block text-sm text-[#a7adb5] hover:text-white transition-colors">{l.label}</a>
                 ))}
               </div>
             </div>
             <div>
-              <div className="text-xs font-semibold text-[#93c5fd] uppercase tracking-wide mb-4">Контакты</div>
-              <div className="space-y-2 text-sm text-[#94a3b8]">
+              <div className="text-xs font-semibold text-[#f5a524] uppercase tracking-wide mb-4">Контакты</div>
+              <div className="space-y-2 text-sm text-[#a7adb5]">
                 <div>+7 (960) 392-42-55</div>
                 <div>+7 (933) 044-70-17 (поддержка)</div>
                 <div>pvsistema@mail.ru</div>
@@ -685,7 +684,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[#64748b]">
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-[#7b828b]">
             <div>© 2026 ООО «ПВ-Система». Все права защищены.</div>
             <div className="flex gap-4">
               <a href={CERTIFICATE_URL} download="ПВ-Система_Сертификат_соответствия.pdf" className="hover:text-white transition-colors">Сертификат соответствия</a>
