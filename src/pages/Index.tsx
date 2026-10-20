@@ -127,6 +127,7 @@ const TRAINING_FILES = [
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openEmergency, setOpenEmergency] = useState<string[]>([]);
 
   const [form, setForm] = useState({ name: "", org: "", email: "", phone: "", msg: "" });
   const [sending, setSending] = useState(false);
@@ -330,19 +331,30 @@ export default function Index() {
 
           <div className="mt-12">
             <div className="text-sm font-semibold text-[#0d1f35] mb-4">Расчёт аварийных режимов:</div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              {EMERGENCY.map(e => (
-                <div key={e.title} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+              {EMERGENCY.map(e => {
+                const isOpen = openEmergency.includes(e.title);
+                return (
+                <div key={e.title} className="bg-[#f4f7fb] border border-[#dce6f0] rounded-xl hover:border-[#0e63b0] transition-colors">
+                  <button
+                    type="button"
+                    onClick={() => setOpenEmergency(p => isOpen ? p.filter(t => t !== e.title) : [...p, e.title])}
+                    className="w-full flex items-center gap-3 p-5 text-left"
+                    aria-expanded={isOpen}
+                  >
                     <div className="icon-box !w-11 !h-11">
                       <Icon name={e.icon} size={20} style={{ color: e.color }} />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-[#0d1f35] text-base leading-tight">{e.title}</h3>
                       <div className="text-[11px] text-[#0e63b0] font-mono mt-0.5">{e.norm}</div>
                     </div>
-                  </div>
-                  <p className="text-[#5a6e82] text-sm leading-relaxed mb-4">{e.desc}</p>
+                    <span className="hidden sm:inline text-xs font-semibold text-[#0e63b0] shrink-0">{isOpen ? "Свернуть" : "Подробнее"}</span>
+                    <Icon name="ChevronDown" size={20} className={`text-[#0e63b0] shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {isOpen && (
+                  <div className="mx-5 pb-6 border-t border-[#dce6f0]">
+                  <p className="mt-4 text-[#5a6e82] text-sm leading-relaxed mb-4">{e.desc}</p>
                   <div className="text-xs font-semibold text-[#0d1f35] mb-2">Исходные данные</div>
                   <p className="text-[#5a6e82] text-xs leading-relaxed mb-4">{e.input}</p>
                   <div className="text-xs font-semibold text-[#0d1f35] mb-2">Результаты</div>
@@ -354,8 +366,11 @@ export default function Index() {
                       </div>
                     ))}
                   </div>
+                  </div>
+                  )}
                 </div>
-              ))}
+                );
+              })}
             </div>
             <p className="text-[#9fb3c8] text-xs mt-4">Аварийные расчёты доступны в полной версии программы.</p>
           </div>
