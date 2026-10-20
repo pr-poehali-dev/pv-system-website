@@ -46,8 +46,25 @@ export function CompatibilitySection() {
         <div className="max-w-4xl mx-auto">
           <div>
             <h3 className="font-display text-lg text-[#0d1f35] mb-4">Системные требования</h3>
-            <div className="bg-white border border-[#dce6f0] rounded-xl overflow-hidden overflow-x-auto">
-              <table className="w-full text-sm min-w-[520px]">
+            <div className="sm:hidden space-y-3">
+              {REQUIREMENTS.map(r => (
+                <div key={r.part} className="bg-white border border-[#dce6f0] rounded-xl p-4">
+                  <div className="font-semibold text-[#0d1f35] text-sm mb-2">{r.part}</div>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[#9fb3c8] mb-0.5">Минимум</div>
+                      <div className="text-[#5a6e82] leading-relaxed">{r.min}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[#0e63b0] mb-0.5">Рекомендуется</div>
+                      <div className="text-[#0d1f35] leading-relaxed">{r.rec}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="hidden sm:block bg-white border border-[#dce6f0] rounded-xl overflow-hidden">
+              <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#e8f4fd] text-[#0d1f35] text-left">
                     <th className="px-4 py-3 font-semibold text-xs">Компонент</th>

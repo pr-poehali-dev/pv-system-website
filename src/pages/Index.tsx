@@ -173,7 +173,7 @@ export default function Index() {
                 className="block px-3 py-2 text-sm text-[#5a6e82] hover:text-[#0e63b0] hover:bg-[#f0f7ff] rounded transition-all">{l.label}</a>
             ))}
             <div className="pt-3 flex flex-col gap-2 border-t border-[#dce6f0] mt-2">
-              <a href="#contacts" className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Демо-версия</a>
+              <a href="https://xn----8sbenozqsbk.xn--p1ai/" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="px-4 py-2 text-sm text-center border border-[#0e63b0] text-[#0e63b0] rounded font-semibold">Демо-версия</a>
               <a href="#contacts" className="px-4 py-2 text-sm text-center gradient-blue-btn text-white rounded font-semibold">Связаться</a>
             </div>
           </div>
