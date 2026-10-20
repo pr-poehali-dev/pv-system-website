@@ -189,8 +189,10 @@ export default function OtherSoftware() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-block text-[11px] font-semibold tracking-[0.15em] text-[#bfdbfe] border border-white/25 rounded px-3 py-1.5 mb-5">
-                РОССИЙСКОЕ НАСТОЛЬНОЕ ПО · WINDOWS 10 / 11
+              <div className="inline-flex flex-wrap justify-center gap-x-2 gap-y-0.5 text-[10px] sm:text-[11px] font-semibold tracking-[0.1em] sm:tracking-[0.15em] text-[#bfdbfe] border border-white/25 rounded px-3 py-1.5 mb-5">
+                <span className="whitespace-nowrap">РОССИЙСКОЕ НАСТОЛЬНОЕ ПО</span>
+                <span className="hidden sm:inline">·</span>
+                <span className="whitespace-nowrap">WINDOWS 10 / 11</span>
               </div>
               <h1 className="font-display leading-tight mb-4 md:mb-5" style={{ letterSpacing: "0.01em" }}>
                 <span className="text-[clamp(2rem,5vw,3.2rem)] text-[#7dd3fc]">ПВ-Система PDF</span>
